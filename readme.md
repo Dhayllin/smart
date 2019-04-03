@@ -40,3 +40,17 @@ Se você tem o PHP instalado localmente e gostaria de usar o servidor de desenvo
 <br>
 
 <code> php artisan serve</code> 
+
+
+*** havendo algum erro erro execute os seguintes comandos: ***
+limpar o cache : 
+
+<code> php artisan config:cache </code> 
+
+<code> php artisan cache:clear</code> 
+
+se persistir, pode ser no banco de dados, refaça tudo feito antes e mais a seguinte linha cli: 
+
+<code> php artisan migrate:fresh --seed </code> 
+
+Isso vai apagar o banco e criar novamente, junto com as seeders.
