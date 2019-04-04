@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePetitionTypesTable extends Migration
+class CreateTypeNumProcessosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreatePetitionTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('petition_types', function (Blueprint $table) {
-            $table->bigIncrements('id');       
+        Schema::create('type_num_processos', function (Blueprint $table) {
+            $table->bigIncrements('id');            
         });
     }
 
@@ -25,6 +25,6 @@ class CreatePetitionTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('petition_types');
+        Schema::dropIfExists('type_num_processos');
     }
 }
