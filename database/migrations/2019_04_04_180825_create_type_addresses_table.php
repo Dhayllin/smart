@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypeAuthorsTable extends Migration
+class CreateTypeAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateTypeAuthorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_authors', function (Blueprint $table) {
-            $table->bigIncrements('id');     
+        Schema::create('type_addresses', function (Blueprint $table) {
+            $table->increments('id');    
+            $table->string('content')->nullable(); 
         });
     }
 
@@ -25,6 +26,6 @@ class CreateTypeAuthorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_authors');
+        Schema::dropIfExists('type_addresses');
     }
 }

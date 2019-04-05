@@ -14,9 +14,13 @@ class CreateTopicsTable extends Migration
     public function up()
     {
         Schema::create('topics', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('text')->nullable();
+            $table->string('title')->nullable();
+            $table->integer('topic_relacionamento_id')->unsigned();
             $table->timestamps();
-        });
+
+            $table->foreign('topic_relacionamento_id')->references('id')->on('topic_relacionamentos')->onDelete('cascade');         });
     }
 
     /**

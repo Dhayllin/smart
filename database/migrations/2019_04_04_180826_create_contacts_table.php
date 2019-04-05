@@ -14,12 +14,17 @@ class CreateContactsTable extends Migration
     public function up()
     {
         Schema::create('contacts', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('endereco')->nullable();
+            $table->string('telefone')->nullable();
+            $table->string('bairro')->nullable();
+            $table->string('cidade')->nullable();
+            $table->string('estado')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
+    /**     // ENDEREÇO ESTÁ NOS CONTACTS
      * Reverse the migrations.
      *
      * @return void

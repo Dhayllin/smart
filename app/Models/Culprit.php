@@ -12,7 +12,7 @@ class Culprit extends Model
      * @var array
      */
     protected $fillable = [
-        'name','contato_id','endereco_id','nacionalidade','profissao','rg','orgao_emissor','cpf',
+        'name','contact_id','nacionalidade','profissao','rg','orgao_emissor','cpf',
         'estado_civil','cnpj','razao_social','person_type_id','active'
     ];
 }

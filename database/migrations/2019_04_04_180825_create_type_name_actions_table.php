@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypeNumProcessosTable extends Migration
+class CreateTypeNameActionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateTypeNumProcessosTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_num_processos', function (Blueprint $table) {
-            $table->bigIncrements('id');            
+        Schema::create('type_name_actions', function (Blueprint $table) {
+            $table->increments('id');  
+            $table->string('content')->nullable(); 
         });
     }
 
@@ -25,6 +26,6 @@ class CreateTypeNumProcessosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_num_processos');
+        Schema::dropIfExists('type_name_actions');
     }
 }

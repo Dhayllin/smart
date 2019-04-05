@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePetitionSectionsTable extends Migration
+class CreateTypeHeadersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreatePetitionSectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('petition_sections', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+        Schema::create('type_headers', function (Blueprint $table) {
+            $table->increments('id');  
+            $table->string( 'content')->nullable();       
         });
     }
 
@@ -26,6 +26,6 @@ class CreatePetitionSectionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('petition_sections');
+        Schema::dropIfExists('type_headers');
     }
 }

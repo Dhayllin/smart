@@ -14,7 +14,16 @@ class CreateTopicRelacionamentosTable extends Migration
     public function up()
     {
         Schema::create('topic_relacionamentos', function (Blueprint $table) {
-            $table->bigIncrements('id');            
+            $table->increments('id');            
+            $table->string('subtopico')->nullable(); 
+            $table->integer('petition_type_id')->unsigned();
+            $table->integer('petition_section_id')->unsigned();
+            $table->integer('petition_demand_id')->unsigned();
+            $table->timestamps();
+
+            $table->foreign('petition_type_id')->references('id')->on('petition_types')->onDelete('cascade');
+            $table->foreign('petition_section_id')->references('id')->on('petition_sections')->onDelete('cascade');
+            $table->foreign('petition_demand_id')->references('id')->on('petition_demands')->onDelete('cascade');
         });
     }
 
