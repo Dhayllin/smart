@@ -15,7 +15,7 @@ class CreateTypeHeadersTable extends Migration
     {
         Schema::create('type_headers', function (Blueprint $table) {
             $table->increments('id');  
-            $table->string( 'content')->nullable();       
+            $table->string('content')->nullable();                  
         });
     }
 
