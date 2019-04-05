@@ -14,17 +14,15 @@ class PetitionTypesTableSeeder extends Seeder
         $now = date("Y-m-d H:i:s");
         DB::table('petition_types')->insert([
             [
-                'id'            =>1,
-                'created_at'   => $now,
-                'updated_at'    => $now,
+                'id'                    =>1,
+                'title'                 =>'Título Título Título  Título',
+                'petition_section_id'   =>1,
+                'type_header_id'        =>1,   
+                'active'                =>1,   
+                'created_at'            => $now,
+                'updated_at'            => $now,
                
-            ],
-            [
-                'id'            =>2,
-              
-                'created_at'   => $now,
-                'updated_at'    => $now,
-            ],      
+            ],               
         ]);
     }
 }

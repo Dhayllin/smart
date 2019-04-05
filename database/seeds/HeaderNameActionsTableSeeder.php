@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TypeAddressesTableSeeder extends Seeder
+class HeaderNameActionsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,14 +11,18 @@ class TypeAddressesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('type_addresses')->insert([
+        DB::table('header_name_actions')->insert([
             [
                 'id'            =>1,
+                'content'=>'linha de baixo'
                
             ],
             [
                 'id'            =>2,  
+                'content'=>'mesma linha'
             ],      
         ]);
     }
 }
+
+

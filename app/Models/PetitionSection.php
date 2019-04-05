@@ -12,6 +12,6 @@ class PetitionSection extends Model
      * @var array
      */
     protected $fillable = [
-        'title','description','active','preliminar','do_cabimento','da_sintese_fatica','do_direito','dos_pedidos'
+        'title','description','active','preliminar','do_cabimento','da_sintese_fatica','do_direito','dos_pedidos','dos_fatos'
     ];
 }

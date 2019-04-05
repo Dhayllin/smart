@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypeCulpritsTable extends Migration
+class CreateHeaderNameActionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateTypeCulpritsTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_culprits', function (Blueprint $table) {
-            $table->increments('id'); 
-            $table->string('content')->nullable();     
+        Schema::create('header_name_actions', function (Blueprint $table) {
+            $table->increments('id');  
+            $table->string('content')->nullable(); 
         });
     }
 
@@ -26,6 +26,6 @@ class CreateTypeCulpritsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_culprits');
+        Schema::dropIfExists('header_name_actions');
     }
 }

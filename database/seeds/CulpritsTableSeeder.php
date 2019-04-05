@@ -15,16 +15,21 @@ class CulpritsTableSeeder extends Seeder
         DB::table('culprits')->insert([
             [
                 'id'            =>1,
-                'created_at'   => $now,
-                'updated_at'    => $now,
-               
-            ],
-            [
-                'id'            =>2,
-              
-                'created_at'   => $now,
-                'updated_at'    => $now,
-            ],      
+                'name'          =>'ICE CREAM',
+                'contact_id'    =>2,
+                'nacionalidade' =>'',
+                'profissao'     =>'',
+                'rg'            =>'',
+                'orgao_emissor' =>'',
+                'cpf'           =>'',     
+                'estado_civil'  =>'',
+                'cnpj'          =>'10.409.455/0001-19',
+                'razao_social'  =>'MULTIVISI COMERCIO E IMPORTACAO EIRELI ME',
+                'person_type_id'=>2,
+                'active'        =>1,
+                'created_at'    => $now,
+                'updated_at'    => $now,               
+            ],    
         ]);
     }
 }

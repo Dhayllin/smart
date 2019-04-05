@@ -20,8 +20,7 @@ class PetitionsTableSeeder extends Seeder
                
             ],
             [
-                'id'            =>2,
-              
+                'id'            =>2,              
                 'created_at'   => $now,
                 'updated_at'    => $now,
             ],      

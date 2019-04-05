@@ -14,7 +14,10 @@ class TopicsTableSeeder extends Seeder
         $now = date("Y-m-d H:i:s");
         DB::table('topics')->insert([
             [
-                'id'            =>1,
+                'id'            =>1, 
+                'text' =>'', 
+                'title' =>'', 
+                'topic_relacionamento_id' =>1, 
                 'created_at'   => $now,
                 'updated_at'    => $now,
                

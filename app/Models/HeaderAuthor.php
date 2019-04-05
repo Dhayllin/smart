@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TypeCulprit extends Model
+class HeaderAuthor extends Model
 {
      /**
      * The attributes that are mass assignable.

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypeNumProcessosTable extends Migration
+class CreateHeaderAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateTypeNumProcessosTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_num_processos', function (Blueprint $table) {
-            $table->increments('id');   
-            $table->string('content')->nullable();      
+        Schema::create('header_addresses', function (Blueprint $table) {
+            $table->increments('id');    
+            $table->string('content')->nullable(); 
         });
     }
 
@@ -26,6 +26,6 @@ class CreateTypeNumProcessosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_num_processos');
+        Schema::dropIfExists('header_addresses');
     }
 }

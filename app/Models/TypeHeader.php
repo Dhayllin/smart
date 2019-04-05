@@ -13,6 +13,7 @@ class TypeHeader extends Model
      */
     
     protected $fillable= [
-        'content'
+        'type_header_id','type_address_id','type_author_id','type_culprit_id',
+       'type_name_action_id','type_num_processo_id',
     ];
 }

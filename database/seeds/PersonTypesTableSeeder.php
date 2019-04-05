@@ -13,10 +13,12 @@ class PersonTypesTableSeeder extends Seeder
     {
         DB::table('person_types')->insert([
             [
-                'id'            =>1,  
+                'id'            =>1, 
+                'content'   =>'PF' 
             ],
             [
                 'id'            =>2,
+                'content'   =>'PJ' 
             ],      
         ]);
     }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TypeNameAction extends Model
+class HeaderNumProcesso extends Model
 {
      /**
      * The attributes that are mass assignable.
