@@ -16,13 +16,13 @@ class TopicRelacionamentosTableSeeder extends Seeder
             [
                 'id'                    =>1,
                 'subtopico'             =>'subtopico Organizar melhor a lógica subtópico.',
-                'demand_id'             =>1, 
+                'petition_demand_id'    =>1, 
                 'petition_type_id'      =>1,
                 'petition_section_id'   =>1,       
                 'created_at'            => $now,
-                'updated_at'            => $now,
-               
+                'updated_at'            => $now,               
             ],    
         ]);
     }
 }
+

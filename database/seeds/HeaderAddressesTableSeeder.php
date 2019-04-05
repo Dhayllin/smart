@@ -14,8 +14,7 @@ class HeaderAddressesTableSeeder extends Seeder
         DB::table('header_addresses')->insert([
             [
                 'id'     =>1,
-                'content'=>'identificar a vara'
-               
+                'content'=>'identificar a vara'               
             ],
             [
                 'id'     =>2,  

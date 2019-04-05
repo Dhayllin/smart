@@ -25,12 +25,9 @@ class ClientsTableSeeder extends Seeder
                 'profissao'         =>'autônomo',          
                 'plano'=>1,
                // 'responsavel_id'=>1,    user_id       
-                'contact_id'        =>1,
-                'cnpj'              =>'',
-                'razao_social'      =>'',
+                'contact_id'        =>1,             
                 'person_type_id'    =>1,            
-                'active'            =>1,
-                'email_verified_at' =>'',
+                'active'            =>1,             
                 'created_at'        => $now,
                 'updated_at'        => $now,
                

@@ -13,6 +13,6 @@ class TopicRelacionamento extends Model
      */
 
     protected $fillable = [
-        'subtopico','petition_type_id','petition_section_id','demand_id',
+        'subtopico','petition_type_id','petition_section_id','petition_demand_id',
     ];
 }

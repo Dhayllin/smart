@@ -15,19 +15,12 @@ class TopicsTableSeeder extends Seeder
         DB::table('topics')->insert([
             [
                 'id'            =>1, 
-                'text' =>'', 
-                'title' =>'', 
+                'text' =>'text text text', 
+                'title' =>'title title', 
                 'topic_relacionamento_id' =>1, 
                 'created_at'   => $now,
                 'updated_at'    => $now,
-               
-            ],
-            [
-                'id'            =>2,
-              
-                'created_at'   => $now,
-                'updated_at'    => $now,
-            ],      
+            ],  
         ]);
     }
 }
