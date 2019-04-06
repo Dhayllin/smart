@@ -29,6 +29,7 @@ class CreateCulpritsTable extends Migration
             $table->integer('contact_id')->unsigned();
             $table->integer('person_type_id')->unsigned();                 
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade'); 
             $table->foreign('person_type_id')->references('id')->on('person_types')->onDelete('cascade'); 

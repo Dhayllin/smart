@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\RestTest;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('rest-teste','RestTest');

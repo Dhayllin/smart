@@ -17,8 +17,9 @@ class CreatePetitionDemandsTable extends Migration
             $table->increments('id');
             $table->string('title')->nullable();
             $table->string('content')->nullable();
-            $table->string('active')->nullable();
+            $table->boolean('active')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

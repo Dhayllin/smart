@@ -17,7 +17,6 @@ class PetitionTypesTableSeeder extends Seeder
                 'id'                    =>1,
                 'title'                 =>'Título Título Título  Título',
                 'petition_section_id'   =>1,
-                'type_header_id'        =>1,   
                 'active'                =>1,   
                 'created_at'            => $now,
                 'updated_at'            => $now,

@@ -15,16 +15,12 @@ class PetitionSectionsTableSeeder extends Seeder
         DB::table('petition_sections')->insert([
             [
                 'id'            =>1,
-     'do_direito'=>'a) DA APLICAÇÃO DO CÓDIGO DE DEFESA DO CONSUMIDOR',
-     'dos_pedidos' =>'Pelo exposto, requer que V. Exa que se digne a:
-                    a) conceder o benefício da justiça gratuita, nos termos
-                    do art. 98 e 99, NCPC;',
-               
-     'dos_fatos' =>'O  autor estava desempregado e conheceu a ré em
-                    exposição de novos negócios para autônomos ',
+                'title'=>'title sectio title sectio title sectio title sectio title sectio title sectio ',
+                'description'=>'description descriptiondescription descriptiondescriptiondescription description',
+                'active'=>1,
                 'created_at'   => $now,
                 'updated_at'    => $now,               
-                ],    
+            ],    
         ]);
     }
 }

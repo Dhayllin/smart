@@ -3,15 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PetitionSection extends Model
 {
+    use SoftDeletes;
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'title','description','active','preliminar','do_cabimento','da_sintese_fatica','do_direito','dos_pedidos','dos_fatos'
+        'title','description','active'
     ];
 }

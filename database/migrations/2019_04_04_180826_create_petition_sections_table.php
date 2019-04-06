@@ -15,16 +15,11 @@ class CreatePetitionSectionsTable extends Migration
     {
         Schema::create('petition_sections', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->change()->nullable();
+            $table->string('title')->nullable();
             $table->string('description')->nullable(); 
-            $table->string('active')->nullable(); 
-            $table->string('preliminar')->nullable(); 
-            $table->string('do_cabimento')->nullable ();
-            $table->string('da_sintese_fatica')->nullable();
-            $table->string('do_direito')->nullable(); 
-            $table->string('dos_fatos')->nullable();   
-            $table->string('dos_pedidos')->nullable();  
-            $table->timestamps();              
+            $table->boolean('active')->nullable(); 
+            $table->timestamps();   
+            $table->softDeletes();           
         });
     }
 

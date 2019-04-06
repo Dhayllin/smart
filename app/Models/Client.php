@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Client extends Model
 {
-    /**s
+    use SoftDeletes;
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

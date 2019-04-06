@@ -34,6 +34,7 @@ class CreateClientsTable extends Migration
             $table->integer('person_type_id')->unsigned(); 
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
 
             //$table->foreign('responsavel_id')->references('id')->on('responsavels')->onDelete('cascade');
             $table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade'); 

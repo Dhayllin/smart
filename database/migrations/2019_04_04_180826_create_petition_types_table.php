@@ -14,15 +14,19 @@ class CreatePetitionTypesTable extends Migration
     public function up()
     {
         Schema::create('petition_types', function (Blueprint $table) {
-            $table->increments('id');  
+            $table->increments('id'); 
+            $table->integer('petition_section_id')->unsigned(); 
             $table->string('title')->nullable();  
-            $table->integer('active')->nullable(); 
-            $table->integer('type_header_id')->unsigned();
-            $table->integer('petition_section_id')->unsigned();
+            $table->string('header_address',2)->nullable();  
+            $table->boolean('header_num_process',2)->nullable();  
+            $table->string('header_author',2)->nullable();  
+            $table->string('header_culprit',2)->nullable();  
+            $table->string('header_name_action',2)->nullable();             
+            $table->boolean('active')->nullable();            
             $table->timestamps();
+            $table->softDeletes();
 
-            $table->foreign('petition_section_id')->references('id')->on('petition_sections')->onDelete('cascade'); 
-            $table->foreign('type_header_id')->references('id')->on('type_headers')->onDelete('cascade'); 
+            $table->foreign('petition_section_id')->references('id')->on('petition_sections')->onDelete('cascade');           
         });
     }
 

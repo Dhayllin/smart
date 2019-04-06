@@ -19,6 +19,7 @@ class CreateTopicsTable extends Migration
             $table->string('title')->nullable();
             $table->integer('topic_relacionamento_id')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('topic_relacionamento_id')->references('id')->on('topic_relacionamentos')->onDelete('cascade');         });
     }

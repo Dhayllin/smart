@@ -20,6 +20,7 @@ class CreateTopicRelacionamentosTable extends Migration
             $table->integer('petition_section_id')->unsigned();
             $table->integer('petition_demand_id')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('petition_type_id')->references('id')->on('petition_types')->onDelete('cascade');
             $table->foreign('petition_section_id')->references('id')->on('petition_sections')->onDelete('cascade');

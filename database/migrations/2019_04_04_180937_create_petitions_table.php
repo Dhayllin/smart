@@ -25,6 +25,7 @@ class CreatePetitionsTable extends Migration
             $table->integer('header_address_id')->unsigned();
             $table->integer('culprit_id')->unsigned();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('petition_section_id')->references('id')->on('petition_sections')->onDelete('cascade'); 
             $table->foreign('petition_type_id')->references('id')->on('petition_types')->onDelete('cascade'); 
