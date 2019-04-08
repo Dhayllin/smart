@@ -21,8 +21,7 @@ class CreatePetitionsTable extends Migration
             $table->integer('petition_type_id')->unsigned();
             $table->integer('petition_demand_id')->unsigned();            
             $table->integer('topic_id')->unsigned();
-            $table->integer('client_id')->unsigned();
-            $table->integer('header_address_id')->unsigned();
+            $table->integer('client_id')->unsigned();            
             $table->integer('culprit_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
@@ -32,7 +31,6 @@ class CreatePetitionsTable extends Migration
             $table->foreign('petition_demand_id')->references('id')->on('petition_demands')->onDelete('cascade'); 
             $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade'); 
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade'); 
-            $table->foreign('header_address_id')->references('id')->on('header_addresses')->onDelete('cascade'); 
             $table->foreign('culprit_id')->references('id')->on('culprits')->onDelete('cascade'); 
 
         });
