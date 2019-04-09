@@ -10,12 +10,8 @@
          @include('layouts.partials.sidebar')       
         <div class="main-panel">
                 @include('layouts.partials.contentheader')
-            <div class="content">
-                <div class="container-fluid">                    
-                    <div class="row">
-                   Home
-                    </div> 
-                </div>                            
+            <div class="content">               
+            @yield('content')                           
             </div>
         </div>   
     @include('layouts.partials.footer')                         

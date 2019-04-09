@@ -12,12 +12,9 @@ use App\Http\Controllers\RestTest;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'web'], function () {
+
+    Route::get('/', 'HomeController@index');    
+    Auth::routes();        
+    Route::get('/home', 'HomeController@index')->name('home');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::resource('rest-teste','RestTest');
