@@ -1,73 +1,110 @@
-@extends('layouts.app')
+<!doctype html>
+<html lang="pt-br">
+    @section('htmlheader')
+        @include('layouts.partials.htmlheader')
+    @show
+</head>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<body>
+    <div class="wrapper wrapper-full-page">
+       
+        <div class="full-page  section-image" data-color="black" data-image="../img/full-screen-image-2.jpg" ;>
+            <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+            <div class="content">
+                <div class="container">
+                    <div class="col-md-4 col-sm-6 ml-auto mr-auto">
+                        <form method="POST" action="{{ route('login') }}">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+                                @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <div class="card card-login card-hidden">
+                                <div class="card-header ">
+                                    <h3 class="header text-center">SMART ADV</h3>
+                                </div>
+                                <div class="card-body ">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label  for="email" >Email </label>                                            
+                                            <input id="email"  name="email" type="email" placeholder="Enter email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"  value="{{ old('email') }}"required autofocus>
+                                           
+                                            @if ($errors->has('email'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                            @endif
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Senha</label>                                            
+                                            <input  id="password" name="password" type="password" placeholder="Senha" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required>
+                                           
+                                            @if ($errors->has('password'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                            @endif
+                                        </div>                                      
+                                    </div>
+                                </div>
+                                <div class="card-footer ml-auto mr-auto">
+                                    <button type="submit" class="btn btn-primary btn-wd">Login</button>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+        <footer class="footer">
+            <div class="container">
+                <nav>
+                    <ul class="footer-menu">
+                        <li>
+                            <a href="#">
+                               
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                               
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                               
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-center">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="#">W3interativa</a>.
+                    </p>
+                </nav>
+            </div>
+        </footer>
     </div>
-</div>
-@endsection
+</body>
+@section('scripts')
+    @include('layouts.partials.scripts')
+@show
+<!-- Light Dashboard DEMO methods, don't include it in your project! -->
+<script src="../js/demo.js"></script>
+<script>
+    $(document).ready(function() {
+        demo.checkFullPageBackgroundImage();
+
+        setTimeout(function() {
+            // after 1000 ms we add the class animated to the login/register card
+            $('.card').removeClass('card-hidden');
+        }, 700)
+    });
+</script>
+</html>

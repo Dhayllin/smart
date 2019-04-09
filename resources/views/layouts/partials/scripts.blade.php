@@ -10,7 +10,6 @@
 <script src="../js/plugins/chartist.min.js"></script>
 <!--  Notifications Plugin    -->
 <script src="../js/plugins/bootstrap-notify.js"></script>
-<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
 <script src="../js/plugins/moment.min.js"></script>
 <!--  DatetimePicker   -->
 <script src="../js/plugins/bootstrap-datetimepicker.js"></script>
@@ -40,3 +39,4 @@
         'csrfToken' => csrf_token(),
     ]) !!};
 </script>
+
