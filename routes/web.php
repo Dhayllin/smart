@@ -13,7 +13,6 @@ use App\Http\Controllers\RestTest;
 */
 
 Route::group(['middleware' => 'web'], function () {
-
     Route::get('/', 'HomeController@index');    
     Auth::routes();        
     Route::get('/home', 'HomeController@index')->name('home');
