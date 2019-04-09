@@ -16,4 +16,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/', 'HomeController@index');    
     Auth::routes();        
     Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::resources([
+        'sections' => 'Petition\SectionController',
+        'types' => 'Petition\TypeController',
+        'demands' => 'Petition\DemandController',
+  ]);
 });
