@@ -1,3 +1,4 @@
+<!--  WEBPACK COMPILADO COM O VUE  -->
 <script src="../js/app.js"></script>
 <!--   Core JS Files   -->
 <script src="../js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
@@ -6,8 +7,8 @@
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="../js/plugins/bootstrap-switch.js"></script>
 <!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?AIzaSyDfI-r7QSeEAYnTYmsWLNjrno4kgFFUL30"></script>
-<!--  Chartist Plugin  -->
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?AIzaSyDfI-r7QSeEAYnTYmsWLNjrno4kgFFUL30"></script>
+ Chartist Plugin  -->
 <script src="../js/plugins/chartist.min.js"></script>
 <!--  Notifications Plugin    -->
 <script src="../js/plugins/bootstrap-notify.js"></script>

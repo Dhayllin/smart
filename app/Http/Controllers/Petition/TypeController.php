@@ -23,7 +23,7 @@ class TypeController extends Controller
      */
     public function index()
     {
-       
+        return   view('petitions.types.index');
     }
 
     /**

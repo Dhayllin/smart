@@ -13527,7 +13527,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-//# sourceMappingURL=axios.map
+sourceMappingURL=axios.map
 var app = new Vue({
     el:"#appvue",
     data:{
@@ -13538,5 +13538,23 @@ var app = new Vue({
             {nome: "Java"},     
             {nome: "Python"},
         ]             
+    }
+})
+
+var app = new Vue({
+    el:"#appvue3",    
+    created: function(){
+        this.getSections()
+    }, 
+    data:{
+        sections: []
+    },
+    methods: {
+        getSections: function(){
+            var urlSections = "sections";
+                   axios.get(urlSections).then(response =>{
+                this.sections = response.data
+            })
+        }
     }
 })

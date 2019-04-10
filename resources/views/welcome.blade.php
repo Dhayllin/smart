@@ -14,3 +14,22 @@
       
     </body>
 </html>
+
+<!--
+var app = new Vue({
+    el:"#appvue3",
+    created: function(){
+        this.getSections()
+    }, 
+    data:{
+        sections: []
+    },
+    methods: {
+        getSections: function(){
+            var urlSections = "sections";
+            axios.get(urlSections).then(response =>{
+                this.sections = response.data
+            })
+        }
+    }
+})

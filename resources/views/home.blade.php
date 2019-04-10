@@ -10,17 +10,29 @@
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                            @{{ session('status') }}
                         </div>
-                    @endif
+                    @endif                    
+                    <div id="appvue3" >
+                           
+                        @{{ title }}
+                        <ul>
+                            <div v-for="(item, index) in sections">@{{index}} -- 
+                                @{{item.title}} 
+                                @{{item.description}}        
+                            </div>
+                        </ul>
+                          
+                    </div>
                     <div id="appvue" >
+                       
                         @{{ title }}
                         <ul>
                             <div v-for="(item, index) in linguagens">@{{index}} -- @{{item.nome}}        
                                 </div>
                         </ul>
+                        
                     </div>
-                </div>
             </div>
         </div>
     </div>

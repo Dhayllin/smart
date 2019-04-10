@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row justify-content-center">
+<div id="appvue" class="row justify-content-center">
 <div class="card strpied-tabled-with-hover col-md-10 ">       
         <div class="card-header ">
             <h4 class="card-title">SEÇÕES</h4>
