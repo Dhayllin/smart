@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card strpied-tabled-with-hover">
+<div class="row justify-content-center">
+<div class="card strpied-tabled-with-hover col-md-10 ">       
         <div class="card-header ">
             <h4 class="card-title">SEÇÕES</h4>
             <p class="card-category"></p>
@@ -99,51 +100,10 @@
                                 </i>
                             </a>
                         </td> 
-                    </tr>
-                    <tr>                        
-                        <td>Doris Greene</td>
-                        <td>$63,542</td>
-                        <td>
-                            <input checked="" data-toggle="switch" data-on-color="info" data-off-color="info" data-on-text="" data-off-text="" type="checkbox">
-                        </td>
-                        <td>
-                            <a rel="tooltip" class="btn btn-link btn-info " data-original-title="View">
-                                <i class="fa fa-image">
-                                </i>
-                            </a>
-                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="#" data-original-title="Edit">
-                                <i class="fa fa-edit">
-                                </i>
-                            </a>
-                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" data-original-title="Remove">
-                                <i class="fa fa-remove">
-                                </i>
-                            </a>
-                        </td> 
-                    </tr>
-                    <tr>                       
-                        <td>Mason Porter</td>
-                        <td>$78,615</td>
-                        <td>
-                            <input checked="" data-toggle="switch" data-on-color="info" data-off-color="info" data-on-text="" data-off-text="" type="checkbox">
-                        </td>
-                        <td>
-                            <a rel="tooltip" class="btn btn-link btn-info " data-original-title="View">
-                                <i class="fa fa-image">
-                                </i>
-                            </a>
-                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="#" data-original-title="Edit">
-                                <i class="fa fa-edit">
-                                </i>
-                            </a>
-                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" data-original-title="Remove">
-                                <i class="fa fa-remove">
-                                </i>
-                            </a>
-                        </td>                     
-                    </tr>
+                    </tr>                                     
                 </tbody>
             </table>
         </div>
-    </div>    
+    </div> 
+</div>   
 @endsection

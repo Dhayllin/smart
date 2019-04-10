@@ -10,10 +10,12 @@
          @include('layouts.partials.sidebar')       
         <div class="main-panel">
                 @include('layouts.partials.contentheader')
-            <div class="content">               
-            @yield('content')                           
-            </div>
-        </div>   
+           <!-- Main content -->
+            <section class="content">
+                <!-- Your Page Content Here -->               
+                @yield('content') 
+            </section><!-- /.content -->
+        </div><!-- /.content-wrapper -->        
     @include('layouts.partials.footer')                         
 </body>
 @section('scripts')
