@@ -12,13 +12,29 @@
                     <tr><th>Título</th>
                     <th>Descrição</th>
                     <th>Status</th>
-                </tr></thead>
+                    <th>Ações</th>
+                </tr>
+            </thead>
                 <tbody>
                     <tr>                       
                         <td>Dakota Rice</td>
                         <td>$36,738</td>
                         <td>
                             <input checked="" data-toggle="switch" data-on-color="info" data-off-color="info" data-on-text="" data-off-text="" type="checkbox">
+                        </td>
+                        <td>
+                            <a rel="tooltip" class="btn btn-link btn-info " data-original-title="View">
+                                <i class="fa fa-image">
+                                    </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="#" data-original-title="Edit">
+                                <i class="fa fa-edit">
+                                    </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" data-original-title="Remove">
+                                <i class="fa fa-remove">
+                                </i>
+                            </a>
                         </td>                        
                     </tr>
                     <tr>                       
@@ -26,6 +42,20 @@
                         <td>$23,789</td>
                         <td>
                             <input checked="" data-toggle="switch" data-on-color="info" data-off-color="info" data-on-text="" data-off-text="" type="checkbox">
+                        </td>
+                        <td>
+                            <a rel="tooltip" class="btn btn-link btn-info " data-original-title="View">
+                                <i class="fa fa-image">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="#" data-original-title="Edit">
+                                <i class="fa fa-edit">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" data-original-title="Remove">
+                                <i class="fa fa-remove">
+                                </i>
+                            </a>
                         </td>                       
                     </tr>
                     <tr>                       
@@ -33,6 +63,20 @@
                         <td>$56,142</td>
                         <td>
                             <input checked="" data-toggle="switch" data-on-color="info" data-off-color="info" data-on-text="" data-off-text="" type="checkbox">
+                        </td>
+                        <td>
+                            <a rel="tooltip" class="btn btn-link btn-info " data-original-title="View">
+                                <i class="fa fa-image">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="#" data-original-title="Edit">
+                                <i class="fa fa-edit">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" data-original-title="Remove">
+                                <i class="fa fa-remove">
+                                </i>
+                            </a>
                         </td>                       
                     </tr>
                     <tr>                      
@@ -40,6 +84,20 @@
                         <td>$38,735</td>
                         <td>
                             <input checked="" data-toggle="switch" data-on-color="info" data-off-color="info" data-on-text="" data-off-text="" type="checkbox">
+                        </td>
+                        <td>
+                            <a rel="tooltip" class="btn btn-link btn-info " data-original-title="View">
+                                <i class="fa fa-image">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="#" data-original-title="Edit">
+                                <i class="fa fa-edit">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" data-original-title="Remove">
+                                <i class="fa fa-remove">
+                                </i>
+                            </a>
                         </td> 
                     </tr>
                     <tr>                        
@@ -47,6 +105,20 @@
                         <td>$63,542</td>
                         <td>
                             <input checked="" data-toggle="switch" data-on-color="info" data-off-color="info" data-on-text="" data-off-text="" type="checkbox">
+                        </td>
+                        <td>
+                            <a rel="tooltip" class="btn btn-link btn-info " data-original-title="View">
+                                <i class="fa fa-image">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="#" data-original-title="Edit">
+                                <i class="fa fa-edit">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" data-original-title="Remove">
+                                <i class="fa fa-remove">
+                                </i>
+                            </a>
                         </td> 
                     </tr>
                     <tr>                       
@@ -54,6 +126,20 @@
                         <td>$78,615</td>
                         <td>
                             <input checked="" data-toggle="switch" data-on-color="info" data-off-color="info" data-on-text="" data-off-text="" type="checkbox">
+                        </td>
+                        <td>
+                            <a rel="tooltip" class="btn btn-link btn-info " data-original-title="View">
+                                <i class="fa fa-image">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="#" data-original-title="Edit">
+                                <i class="fa fa-edit">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" data-original-title="Remove">
+                                <i class="fa fa-remove">
+                                </i>
+                            </a>
                         </td>                     
                     </tr>
                 </tbody>
