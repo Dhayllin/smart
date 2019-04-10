@@ -13,7 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    Você está logado!
+                    <div id="appvue" >
+                        @{{ title }}
+                        <ul>
+                            <div v-for="(item, index) in linguagens">@{{index}} -- @{{item.nome}}        
+                                </div>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
