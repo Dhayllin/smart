@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Petition;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -24,9 +25,9 @@ class SectionController extends Controller
      */
     public function index()
     {
-        $sections = DB::table('petition_sectios')->select('sections.*')->get();
+       // $sections = DB::table('petition_sections')->select('petition_sections.*')->get();
 
-        return $sections;
+        return   view('petitions.sections.index');
     }
 
     /**

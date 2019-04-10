@@ -5,11 +5,12 @@
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="../js/plugins/bootstrap-switch.js"></script>
 <!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?YOUR_KEY_HERE"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?AIzaSyDfI-r7QSeEAYnTYmsWLNjrno4kgFFUL30"></script>
 <!--  Chartist Plugin  -->
 <script src="../js/plugins/chartist.min.js"></script>
 <!--  Notifications Plugin    -->
 <script src="../js/plugins/bootstrap-notify.js"></script>
+<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
 <script src="../js/plugins/moment.min.js"></script>
 <!--  DatetimePicker   -->
 <script src="../js/plugins/bootstrap-datetimepicker.js"></script>
@@ -33,10 +34,5 @@
 <script src="../js/plugins/fullcalendar.min.js"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="../js/light-bootstrap-dashboard.js?v=2.0.1" type="text/javascript"></script>
-
-<script>
-    window.Laravel = {!! json_encode([
-        'csrfToken' => csrf_token(),
-    ]) !!};
-</script>
-
+<!-- Light Dashboard DEMO methods, don't include it in your project! -->
+<script src="../js/demo.js"></script>
