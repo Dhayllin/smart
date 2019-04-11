@@ -41,7 +41,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+    return view('petitions.types.create');
     }
 
     /**
