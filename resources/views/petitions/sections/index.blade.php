@@ -22,7 +22,7 @@
                         <td>@{{ item.title}}</td>
                         <td>@{{ item.description}}</td>
                         <td>
-                            <input   checked="" data-toggle="switch" data-on-color="info" data-off-color="info" data-on-text="" data-off-text="" type="checkbox">
+                                <input   checked="" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
                         <td>
                             <a rel="tooltip" class="btn btn-link btn-info " href="@{{ item.id }}" data-original-title="View">
