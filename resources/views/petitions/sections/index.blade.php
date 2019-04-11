@@ -24,11 +24,7 @@
                         <td>
                                 <input   checked="" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
-                        <td>
-                            <a rel="tooltip" class="btn btn-link btn-info " href="@{{ item.id }}" data-original-title="View">
-                                <i class="fa fa-image">
-                                </i>
-                            </a>
+                        <td>                           
                             <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="@{{ item.id }}" data-original-title="Edit">
                                 <i class="fa fa-edit">
                                 </i>

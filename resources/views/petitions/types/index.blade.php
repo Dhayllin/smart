@@ -27,18 +27,14 @@
                         <td>@{{ item.title}}</td>
                         <td>@{{ item.header_address}}</td>                       
                         <td>@{{ item.title_section}}</td>
-                         <td>@{{ item.header_num_process}}</td>
+                        <td>@{{ item.header_num_process}}</td>
                         <td>@{{ item.header_author}}</td>
                         <td>@{{ item.header_culprit}}</td>
                         <td>@{{ item.header_name_action}}</td>                    
                         <td>
                             <input   checked="" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
-                        <td>
-                            <a rel="tooltip" class="btn btn-link btn-info " href="@{{ item.id }}" data-original-title="View">
-                                <i class="fa fa-image">
-                                </i>
-                            </a>
+                        <td>                            
                             <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="@{{ item.id }}" data-original-title="Edit">
                                 <i class="fa fa-edit">
                                 </i>
