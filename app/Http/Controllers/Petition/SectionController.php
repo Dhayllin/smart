@@ -15,7 +15,7 @@ class SectionController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('web');
+        $this->middleware('auth');
     }
 
     /**
@@ -25,13 +25,16 @@ class SectionController extends Controller
      */
     public function index()
     {
-        $sections = DB::table('petition_sections')->select('petition_sections.*')->get();
+       return view('petitions.sections.index');
+    }
 
+    public function list(){
+        $sections = DB::table('petition_sections')->select('petition_sections.*')->get();
         return  $sections;
     }
 
     public function create(){
-        return view('petitions.sections.index');
+        
     }
 
     /**

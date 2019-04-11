@@ -12,7 +12,7 @@ var app = new Vue({
 })
 
 var app = new Vue({
-    el:"#appvue3",    
+    el:"#list_sections",    
     created: function(){
         this.getSections()
     }, 
@@ -21,7 +21,7 @@ var app = new Vue({
     },
     methods: {
         getSections: function(){
-            var urlSections = "sections";
+            var urlSections = "list-sections";
                    axios.get(urlSections).then(response =>{
                 this.sections = response.data
             })

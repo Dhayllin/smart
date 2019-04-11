@@ -22,4 +22,8 @@ Route::group(['middleware' => 'web'], function () {
         'types' => 'Petition\TypeController',
         'demands' => 'Petition\DemandController',
   ]);
+   
+    Route::get('list-sections','Petition\SectionController@list')->name('list-sections');
+  
+
 });

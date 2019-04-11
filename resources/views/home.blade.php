@@ -13,7 +13,7 @@
                             @{{ session('status') }}
                         </div>
                     @endif                    
-                    <div id="appvue3" >
+                    <div id="list_sections" >
                            
                         @{{ title }}
                         <ul>

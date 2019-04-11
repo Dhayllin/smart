@@ -30,8 +30,8 @@ Tip 2: you can also add an image using data-image tag
                 </a>
                 <div class="collapse " id="componentsExamples">
                     <ul class="nav">
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#">                               
+                        <li class="nav-item "{{{ (Request::is('/sections/*') ? 'class=active' : '') }}}>
+                            <a class="nav-link" href="{{ url('/sections') }}">                               
                                 <span class="sidebar-normal">Seções</span>
                             </a>
                         </li>
