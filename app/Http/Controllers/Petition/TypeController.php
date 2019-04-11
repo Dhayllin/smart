@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Petition;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -24,6 +25,13 @@ class TypeController extends Controller
     public function index()
     {
         return   view('petitions.types.index');
+    }
+
+    public function list(){
+        $types = DB::table('petition_types')->select('petition_types.title','petition_types.header_address','petition_types.header_num_process','petition_types.header_author','petition_types.header_culprit','petition_types.header_name_action','petition_sections.title as title_section','petition_types.active')
+                                                ->leftjoin('petition_sections','petition_types.petition_section_id','petition_sections.id')
+                                                ->get();
+        return  $types;
     }
 
     /**

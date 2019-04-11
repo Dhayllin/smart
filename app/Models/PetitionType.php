@@ -15,6 +15,7 @@ class PetitionType extends Model
      * @var array
      */
     protected $fillable = [
-       'petition_section_id','title','active',
+       'petition_section_id','title','active','header_address','header_num_process','header_author',
+       'header_culprit','header_name_action'
     ];
 }

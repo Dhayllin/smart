@@ -13558,3 +13558,39 @@ var app = new Vue({
         }
     }
 })
+
+var app = new Vue({
+    el:"#list_demands",    
+    created: function(){
+        this.getDemands()
+    }, 
+    data:{
+        demands: []
+    },
+    methods: {
+        getDemands: function(){
+            var urlDemands = "list-demands";
+                   axios.get(urlDemands).then(response =>{
+                this.demands = response.data
+            })
+        }
+    }
+})
+
+var app = new Vue({
+    el:"#list_types",    
+    created: function(){
+        this.getTypes()
+    }, 
+    data:{
+        types: []
+    },
+    methods: {
+        getTypes: function(){
+            var urlTypes = "list-types";
+                   axios.get(urlTypes).then(response =>{
+                this.types = response.data
+            })
+        }
+    }
+})

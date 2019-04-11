@@ -1,65 +1,59 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card strpied-tabled-with-hover">
+<div id="list_types" class="row justify-content-center">
+<div class="card strpied-tabled-with-hover table-full-width table-responsive">       
         <div class="card-header ">
-            <h4 class="card-title">Striped Table with Hover</h4>
-            <p class="card-category">Here is a subtitle for this table</p>
+            <h4 class="card-title">TIPOS</h4>
+            <p class="card-category"></p>
         </div>
         <div class="card-body table-full-width table-responsive">
             <table class="table table-hover table-striped">
                 <thead>
-                    <tr><th>ID</th>
-                    <th>Name</th>
-                    <th>Salary</th>
-                    <th>Country</th>
-                    <th>City</th>
-                </tr></thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Cabeçalho</th>
+                    <th>Seção</th>
+                    <th>Número Processo</th>
+                    <th>Autor</th>
+                    <th>Réu</th>
+                    <th>Nome da Ação</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Dakota Rice</td>
-                        <td>$36,738</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Minerva Hooper</td>
-                        <td>$23,789</td>
-                        <td>Curaçao</td>
-                        <td>Sinaai-Waas</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Sage Rodriguez</td>
-                        <td>$56,142</td>
-                        <td>Netherlands</td>
-                        <td>Baileux</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Philip Chaney</td>
-                        <td>$38,735</td>
-                        <td>Korea, South</td>
-                        <td>Overland Park</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Doris Greene</td>
-                        <td>$63,542</td>
-                        <td>Malawi</td>
-                        <td>Feldkirchen in Kärnten</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Mason Porter</td>
-                        <td>$78,615</td>
-                        <td>Chile</td>
-                        <td>Gloucester</td>
-                    </tr>
+                    <tr  v-for="item in types">                       
+                        <td>@{{ item.title}}</td>
+                        <td>@{{ item.header_address}}</td>                       
+                        <td>@{{ item.title_section}}</td>
+                         <td>@{{ item.header_num_process}}</td>
+                        <td>@{{ item.header_author}}</td>
+                        <td>@{{ item.header_culprit}}</td>
+                        <td>@{{ item.header_name_action}}</td>
+                    
+                        <td>
+                            <input   checked="" data-toggle="switch" data-on-color="info" data-off-color="info" data-on-text="" data-off-text="" type="checkbox">
+                        </td>
+                        <td>
+                            <a rel="tooltip" class="btn btn-link btn-info " href="@{{ item.id }}" data-original-title="View">
+                                <i class="fa fa-image">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="@{{ item.id }}" data-original-title="Edit">
+                                <i class="fa fa-edit">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="@{{ item.id }}" data-original-title="Remove">
+                                <i class="fa fa-remove">
+                                </i>
+                            </a>
+                        </td>                        
+                    </tr>                                             
                 </tbody>
             </table>
         </div>
-    </div>
+    </div> 
+</div>   
 @endsection
+

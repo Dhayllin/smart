@@ -22,8 +22,10 @@ Route::group(['middleware' => 'web'], function () {
         'types' => 'Petition\TypeController',
         'demands' => 'Petition\DemandController',
   ]);
-   
-    Route::get('list-sections','Petition\SectionController@list')->name('list-sections');
-  
+    
+  Route::get('list-sections','Petition\SectionController@list')->name('list-sections');
+  Route::get('list-demands','Petition\DemandController@list')->name('list-demands');
+  Route::get('list-types','Petition\TypeController@list')->name('list-types');
+    
 
 });

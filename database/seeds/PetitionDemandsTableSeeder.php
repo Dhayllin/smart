@@ -17,7 +17,7 @@ class PetitionDemandsTableSeeder extends Seeder
                 'id'            =>1,
                 'title'=>'obrigação de fazer',
                 'content' =>'impor multa  diária ao réu',  
-                'active' =>1,
+                'active' =>0,
                 'created_at'   => $now,
                 'updated_at'    => $now,
                
@@ -29,7 +29,23 @@ class PetitionDemandsTableSeeder extends Seeder
                 'active' =>1,
                 'created_at'   => $now,
                 'updated_at'    => $now,
-            ],      
+            ], 
+            [
+                'id'            =>3,
+                'title'=>'obrigação de fazer',
+                'content' =>'impor multa  diária ao réu',  
+                'active' =>0,
+                'created_at'   => $now,
+                'updated_at'    => $now,
+            ],  
+            [
+                'id'            =>4,
+                'title'=>'lorem ipson',
+                'content' =>'lorem lorem ipson',  
+                'active' =>1,
+                'created_at'   => $now,
+                'updated_at'    => $now,
+            ],       
         ]);
     }
 }
