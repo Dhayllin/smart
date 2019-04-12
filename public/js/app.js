@@ -13581,7 +13581,15 @@ var app = new Vue({
                 axios.get(urlDemands).then(response =>{
                     this.demands = response.data
             })
-        }
+        },
+
+        deleteDemands: function(item){            
+            var url = "demands/" + item.id;        
+                axios.delete(url).then(response => {
+                    console.log(response);
+                    this.getDemands();
+                }); 
+        },
     }
 })
 
@@ -13599,6 +13607,14 @@ var app = new Vue({
                 axios.get(urlTypes).then(response =>{
                     this.types = response.data
             })
-        }
+        },
+
+        deleteTypes: function(item){            
+            var url = "types/" + item.id;        
+                axios.delete(url).then(response => {
+                    console.log(response);
+                    this.getTypes();
+                }); 
+        },
     }
 })

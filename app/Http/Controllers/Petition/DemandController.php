@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Petition;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\PetitionDemand;
 
 class DemandController extends Controller
 {
@@ -29,7 +30,9 @@ class DemandController extends Controller
     }
 
     public function list(){
-        $demands = DB::table('petition_demands')->select('petition_demands.*')->get();
+        $demands = DB::table('petition_demands')->select('petition_demands.*')
+                                                    ->where('deleted_at',null)    
+                                                    ->get();
         return  $demands;
     }
 
@@ -96,6 +99,7 @@ class DemandController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $demand = PetitionDemand::findOrFail($id);
+        $demand->delete();    
     }
 }

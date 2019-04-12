@@ -15,7 +15,7 @@
                 <tr>
                     <th>Título</th>
                     <th>Descrição</th>
-                    <th>Status</th>
+                    <th>Ativo</th>
                     <th>Ações</th>
                 </tr>
             </thead>

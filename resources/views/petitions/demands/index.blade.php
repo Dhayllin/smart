@@ -15,7 +15,7 @@
                 <tr>
                     <th>Título</th>
                     <th>Descrição</th>
-                    <th>Status</th>
+                    <th>Ativo</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -31,7 +31,7 @@
                                 <i class="fa fa-edit">
                                 </i>
                             </a>
-                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" :href="item.id" data-original-title="Remove">
+                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" v-on:click.prevent.stop="deleteDemands(item)" data-original-title="Eliminar">
                                 <i class="fa fa-remove">
                                 </i>
                             </a>
