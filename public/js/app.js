@@ -13560,8 +13560,14 @@ var app = new Vue({
         deleteSections: function(item){            
             var url = "sections/" + item.id;        
                 axios.delete(url).then(response => {
-                    console.log(response);
+
                     this.getSections();
+                    
+                    $.notify({
+                        message: 'Deletado com sucesso!'
+                    },{
+                        type: 'danger'
+                    });
                 }); 
         },
     }
@@ -13586,11 +13592,22 @@ var app = new Vue({
         deleteDemands: function(item){            
             var url = "demands/" + item.id;        
                 axios.delete(url).then(response => {
-                    console.log(response);
+
                     this.getDemands();
+
+                    $.notify({
+                        message: 'Deletado com sucesso!'
+                    },{
+                        type: 'danger'
+                    });
                 }); 
         },
     }
+})
+
+// register modal component
+Vue.component('modal', {
+    template: '#modal-template'
 })
 
 var app = new Vue({
@@ -13599,7 +13616,8 @@ var app = new Vue({
         this.getTypes()
     }, 
     data:{
-        types: []
+        types: [],
+        showModal: false
     },
     methods: {
         getTypes: function(){
@@ -13609,11 +13627,20 @@ var app = new Vue({
             })
         },
 
+        getModalDelete: function(){
+                alert();
+        },
         deleteTypes: function(item){            
             var url = "types/" + item.id;        
                 axios.delete(url).then(response => {
-                    console.log(response);
+
                     this.getTypes();
+
+                    $.notify({
+                        message: 'Deletado com sucesso!'
+                    },{
+                        type: 'danger'
+                    });
                 }); 
         },
     }
