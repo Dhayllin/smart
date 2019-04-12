@@ -25,15 +25,15 @@
                                 <input   checked="" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
                         <td>                           
-                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="@{{ item.id }}" data-original-title="Edit">
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" :href="item.id" data-original-title="Edit">
                                 <i class="fa fa-edit">
                                 </i>
                             </a>
-                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="@{{ item.id }}" data-original-title="Remove">
+                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" v-on:click.prevent.stop="deleteSections(item)" data-original-title="Eliminar">
                                 <i class="fa fa-remove">
                                 </i>
                             </a>
-                        </td>                        
+                        </td>                                                
                     </tr>                                             
                 </tbody>
             </table>

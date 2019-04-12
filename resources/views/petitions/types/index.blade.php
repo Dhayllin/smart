@@ -34,12 +34,12 @@
                         <td>
                             <input   checked="" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
-                        <td>                            
-                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" href="@{{ item.id }}" data-original-title="Edit">
+                        <td>                           
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" :href="item.id" data-original-title="Edit">
                                 <i class="fa fa-edit">
                                 </i>
                             </a>
-                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="@{{ item.id }}" data-original-title="Remove">
+                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" :href="item.id" data-original-title="Remove">
                                 <i class="fa fa-remove">
                                 </i>
                             </a>

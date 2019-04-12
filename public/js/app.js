@@ -13552,10 +13552,18 @@ var app = new Vue({
     methods: {
         getSections: function(){
             var urlSections = "list-sections";
-                   axios.get(urlSections).then(response =>{
-                this.sections = response.data
+                axios.get(urlSections).then(response =>{
+                    this.sections = response.data
             })
-        }
+        },
+
+        deleteSections: function(item){            
+            var url = "sections/" + item.id;        
+                axios.delete(url).then(response => {
+                    console.log(response);
+                    this.getSections();
+                }); 
+        },
     }
 })
 
@@ -13570,8 +13578,8 @@ var app = new Vue({
     methods: {
         getDemands: function(){
             var urlDemands = "list-demands";
-                   axios.get(urlDemands).then(response =>{
-                this.demands = response.data
+                axios.get(urlDemands).then(response =>{
+                    this.demands = response.data
             })
         }
     }
@@ -13588,8 +13596,8 @@ var app = new Vue({
     methods: {
         getTypes: function(){
             var urlTypes = "list-types";
-                   axios.get(urlTypes).then(response =>{
-                this.types = response.data
+                axios.get(urlTypes).then(response =>{
+                    this.types = response.data
             })
         }
     }

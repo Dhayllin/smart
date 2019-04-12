@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Petition;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\PetitionSection;
 
 class SectionController extends Controller
 {
@@ -29,12 +30,10 @@ class SectionController extends Controller
     }
 
     public function list(){
-        $sections = DB::table('petition_sections')->select('petition_sections.*')->get();
+        $sections = DB::table('petition_sections')->select('petition_sections.*')
+                                                    ->where('deleted_at',null)    
+                                                    ->get();
         return  $sections;
-    }
-
-    public function create(){
-        return view('petitions.sections.create');
     }
 
     /**
@@ -42,9 +41,9 @@ class SectionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function crsseate()
-    {
-        //
+    
+    public function create(){
+        return view('petitions.sections.create');
     }
 
     /**
@@ -100,6 +99,15 @@ class SectionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sections = PetitionSection::findOrFail($id);  
+        $sections->delete();      
+    }
+
+
+    public function testDelete(){
+        $sections = DB::table('petition_sections')->select('petition_sections.id')                                                               
+                                                            ->where('deleted_at',null)    
+                                                            ->get();  
+        return  view('petitions.sections.test',compact('sections'));
     }
 }

@@ -15,6 +15,6 @@ class PetitionSection extends Model
      * @var array
      */
     protected $fillable = [
-        'title','description','active'
+        'id','title','description','active'
     ];
 }
