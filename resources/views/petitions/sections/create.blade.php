@@ -4,11 +4,13 @@
 <div id="list_demands" class="row justify-content-center">
 <div class="card strpied-tabled-with-hover col-md-10 ">  
         <div class="card-header ">
-            <h4 class="card-title">Criar Seção</h4>
+            <h4 class="card-title">Criar Seção
+                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
+            </h4>
         </div>
         <div class="card-body ">
             <div class="row">
-                <label class="col-sm-2 col-form-label">Título:</label>
+                <label class="col-sm-2 col-form-label">Título:</label>               
                 <div class="col-sm-7">
                     <div class="form-group">
                         <input class="form-control" name="required" required="true" type="text">

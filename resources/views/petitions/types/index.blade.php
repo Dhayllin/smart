@@ -4,7 +4,9 @@
 <div id="list_types" class="row justify-content-center">
 <div class="card strpied-tabled-with-hover table-full-width table-responsive">       
         <div class="card-header ">
-            <h4 class="card-title">TIPOS</h4>
+            <h4 class="card-title">TIPOS
+                    <a href="types/create" class="btn btn-primary float-right">Novo&nbsp;<i class="fa fa-plus"></i></a>
+            </h4>
             <p class="card-category"></p>
         </div>
         <div class="card-body table-full-width table-responsive">

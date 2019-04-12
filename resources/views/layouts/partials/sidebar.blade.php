@@ -19,35 +19,22 @@ Tip 2: you can also add an image using data-image tag
                     <i class="nc-icon nc-chart-pie-35"></i>
                     <p>Dashboard</p>
                 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#componentsExamples">
-                    <i class="nc-icon nc-notes"></i>
-                    <p>
-                        Petições
-                        <b class="caret"></b>
-                    </p>
+            </li>          
+            <li class="nav-item "{{{ (Request::is('/sections/*') ? 'class=active' : '') }}}>
+                <a class="nav-link" href="{{ url('/sections') }}">                               
+                    <span class="sidebar-normal">Seções</span>
                 </a>
-                <div class="collapse " id="componentsExamples">
-                    <ul class="nav">
-                        <li class="nav-item "{{{ (Request::is('/sections/*') ? 'class=active' : '') }}}>
-                            <a class="nav-link" href="{{ url('/sections') }}">                               
-                                <span class="sidebar-normal">Seções</span>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="#">                              
-                                <span class="sidebar-normal">Tipos</span>
-                            </a>
-                        </li> 
-                        <li class="nav-item ">
-                                <a class="nav-link" href="#">                                    
-                                    <span class="sidebar-normal">Pedidos</span>
-                                </a>
-                            </li>     
-                    </ul>
-                </div>
-            </li>             
+            </li>        
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ url('/demands') }}">                                    
+                    <span class="sidebar-normal">Pedidos</span>
+                </a>
+            </li>   
+            <li class="nav-item ">
+                <a class="nav-link" href="{{ url('/types') }}">                              
+                    <span class="sidebar-normal">Tipos</span>
+                </a>
+            </li>      
         </ul>
     </div>
 </div>

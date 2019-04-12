@@ -12,27 +12,7 @@
                         <div class="alert alert-success" role="alert">
                             @{{ session('status') }}
                         </div>
-                    @endif                    
-                    <div id="list_sections" >
-                           
-                        @{{ title }}
-                        <ul>
-                            <div v-for="(item, index) in sections">@{{index}} -- 
-                                @{{item.title}} 
-                                @{{item.description}}        
-                            </div>
-                        </ul>
-                          
-                    </div>
-                    <div id="appvue" >
-                       
-                        @{{ title }}
-                        <ul>
-                            <div v-for="(item, index) in linguagens">@{{index}} -- @{{item.nome}}        
-                                </div>
-                        </ul>
-                        
-                    </div>
+                    @endif  
             </div>
         </div>
     </div>
