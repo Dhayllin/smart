@@ -1,49 +1,50 @@
 @extends('layouts.app')
-@extends('layouts.app')
 
 @section('content')
 @if(Session::has('mensagem_sucesso'))
 <div class="alert alert-success">{{ Session::get('mensagem_sucesso')}}</div>
 @endif
-<div class="row justify-content-center">         
-<div class="card strpied-tabled-with-hover col-md-10 ">  
+<div id="list_sections" class="row justify-content-center">
+       
+<div class="card strpied-tabled-with-hover col-md-10 ">   
         
         <div class="card-header ">
-            <h4 class="card-title">Editar Seção
-                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
+            <h4 class="card-title">SEÇÕES                        
+                <a href="sections/create" class="btn btn-primary float-right">Novo&nbsp;<i class="fa fa-plus"></i></a>
             </h4>
+            <p class="card-category"></p>
         </div>
-        <form action="{{ route('sections.update',$item->id) }}" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="_method" value="PATCH">
-           @csrf
-        <div class="card-body ">       
-            <div class="row">
-                <label for="title" class="col-sm-2 col-form-label">Título:</label>
-                <div class="col-sm-7">
-                    <div class="form-group">
-                        <input class="form-control" name="title" type="text" value="{{$item->title}}">
-                    </div>
-                </div>           
-            </div>   
-            <div class="row">
-                <label for="description" class="col-sm-2 col-form-label">Descrição:</label>
-                <div class="col-sm-7">
-                    <div class="form-group">
-                        <input class="form-control" name="description"  type="text" value="{{$item->description}}">
-                    </div>
-                </div>            
-            </div>
-            <div class="row">
-                <label for="active" class="col-sm-3 col-form-label">Ativo:</label>
-                <div class="form-group">
-                    <input  name="active" checked="" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
-                </div>
-            </div>
+        <div class="card-body table-full-width table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Ativo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+                <tbody>
+                    <tr  v-for="item in sections">                       
+                        <td>@{{ item.title}}</td>
+                        <td>@{{ item.description}}</td>
+                        <td>
+                                <input   :checked="item.active" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
+                        </td>
+                        <td>                           
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" :href="'sections/'+item.id+'/edit'" data-original-title="Edit">
+                                <i class="fa fa-edit">
+                                </i>
+                            </a>
+                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" v-on:click.prevent.stop="deleteSections(item)" data-original-title="Eliminar">
+                                <i class="fa fa-remove">
+                                </i>
+                            </a>
+                        </td>                                                
+                    </tr>                                             
+                </tbody>
+            </table>
         </div>
-        <div class="card-footer text-center">
-            <button type="submit" class="btn btn-primary">Registrar</button>
-        </div>
-        </div>
-    </div>
-</div>
+    </div> 
+</div> 
 @endsection

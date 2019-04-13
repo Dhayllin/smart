@@ -26,13 +26,7 @@
                             </span>
                         @endif
                     </div>                   
-                </div>              
-                <div class="col">
-                    <label for="active">Ativo:</label>
-                    <div class="form-group has-feedback {{ $errors->has('razao_social') ? 'has-error' : '' }}">
-                        <input   checked="" name="active"data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
-                    </div>
-                </div>          
+                </div>         
             </div>  
             <div class="row">  
                 <div class="col-md-4">             
@@ -136,7 +130,7 @@
                     </div>               
         </div>
         <div class="card-footer text-center">
-            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
         </div>
     </div>
 </form>

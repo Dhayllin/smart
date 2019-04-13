@@ -80,12 +80,12 @@ class SectionController extends Controller
         {   
             $item->save();
             DB::commit(); 
-            return redirect(route('sections.index'))->with('mensagem_sucesso', 'Seção adicionada com sucesso');
+            return redirect()->route('sections.index')->with('success', 'Cadastro realizado com sucesso!');
         }
         catch(\Exception $ex)                   
         {
             DB::rollBack();
-            return redirect(route('sections.create', $item->id))->withErrors($ex->getMessage())->withInput();
+            return redirect()->route('sections.create', $item->id)->with('error', 'Erro ao cadastrar');
         }  
     }
 

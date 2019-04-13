@@ -32,16 +32,10 @@
                         <input class="form-control" name="content"  type="text">
                     </div>
                 </div>            
-            </div>
-            <div class="row">
-                <label for="active" class="col-sm-3 col-form-label">Ativo:</label>
-                <div class="form-group">
-                    <input  name="active" checked="" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
-                </div>
-            </div>
+            </div>      
         </div>
         <div class="card-footer text-center">
-            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
         </div>
         </div>
     </div>
