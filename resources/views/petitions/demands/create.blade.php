@@ -29,7 +29,7 @@
                 <label for="content" class="col-sm-2 col-form-label">Descrição:</label>
                 <div class="col-sm-7">
                     <div class="form-group">
-                        <input class="form-control" name="content"  type="text">
+                        <textarea class="form-control" name="content" rows="30" cols="1000" type="text"> </textarea>
                     </div>
                 </div>            
             </div>      
