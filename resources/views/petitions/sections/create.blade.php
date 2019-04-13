@@ -4,7 +4,7 @@
 <div class="row justify-content-center">
 <div class="card strpied-tabled-with-hover col-md-10 ">  
         <div class="card-header ">
-            <h4 class="card-title">Criar Pedido
+            <h4 class="card-title">Criar Seção
                     <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
             </h4>
         </div>        
