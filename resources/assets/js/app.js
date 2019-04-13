@@ -32,7 +32,7 @@ var app = new Vue({
                 axios.delete(url).then(response => {
 
                     this.getSections();
-                    
+
                     $.notify({
                         message: 'Deletado com sucesso!'
                     },{
@@ -62,7 +62,7 @@ var app = new Vue({
         deleteDemands: function(item){            
             var url = "demands/" + item.id;        
                 axios.delete(url).then(response => {
-
+                    
                     this.getDemands();
 
                     $.notify({

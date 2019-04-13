@@ -54,7 +54,39 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'description'=>'required',        
+            ],
+            [
+                'title.required'=>'Adicione um Título.'   ,
+                'description.required'=>'Adicione uma Descrição.'   
+            ]
+        );
+        
+        $item = new PetitionSection();
+
+        $item->title = $request->title;
+        $item->description = $request->description;
+
+        if($request->active != null){
+            $item->active = 1;
+        }else{
+            $item->active = 0;
+        }
+
+        DB::beginTransaction();
+        try
+        {   
+            $item->save();
+            DB::commit(); 
+            return redirect(route('sections.index'))->with('mensagem_sucesso', 'Seção adicionada com sucesso');
+        }
+        catch(\Exception $ex)                   
+        {
+            DB::rollBack();
+            return redirect(route('sections.create', $item->id))->withErrors($ex->getMessage())->withInput();
+        }  
     }
 
     /**
@@ -65,7 +97,7 @@ class SectionController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = PetitionSection::findOrFail($id);
     }
 
     /**

@@ -24,10 +24,10 @@
                         <td>@{{ item.title}}</td>
                         <td>@{{ item.content}}</td>
                         <td>
-                            <input   checked="" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
+                            <input   :checked="item.active" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
                         <td>                           
-                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" :href="item.id" data-original-title="Edit">
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" :href="'demands/'+item.id+'/edit'" data-original-title="Edit">
                                 <i class="fa fa-edit">
                                 </i>
                             </a>

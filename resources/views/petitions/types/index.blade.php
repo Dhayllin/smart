@@ -34,7 +34,7 @@
                         <td>@{{ item.header_culprit}}</td>
                         <td>@{{ item.header_name_action}}</td>                    
                         <td>
-                            <input   checked="" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
+                            <input   :checked="item.active"  data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
                         <td>                           
                             <a rel="tooltip" class="btn btn-link btn-warning table-action edit" :href="item.id" v-on:click.prevent.stop="getModalDelete()" data-original-title="Edit">

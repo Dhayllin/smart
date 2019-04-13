@@ -54,7 +54,38 @@ class DemandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'content'=>'required',        
+            ],
+            [
+                'title.required'=>'Adicione um Título.'   ,
+                'content.required'=>'Adicione uma Descrição.'   
+            ]
+        );
+        $item = new PetitionDemand();
+
+        $item->title = $request->title;
+        $item->content = $request->content;
+
+        if($request->active != null){
+            $item->active = 1;
+        }else{
+            $item->active = 0;
+        }
+
+        DB::beginTransaction();
+        try
+        {   
+            $item->save();
+            DB::commit(); 
+            return redirect(route('demands.index'))->with('mensagem_sucesso', 'Pedido adicionado com sucesso');
+        }
+        catch(\Exception $ex)                   
+        {
+            DB::rollBack();
+            return redirect(route('demands.create', $item->id))->withErrors($ex->getMessage())->withInput();
+        } 
     }
 
     /**
@@ -76,7 +107,9 @@ class DemandController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = PetitionDemand::findOrFail($id);
+
+        return view('petitions.demands.edit',compact('item'));
     }
 
     /**
@@ -88,7 +121,29 @@ class DemandController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $item = PetitionDemand::findOrFail($id);
+
+        $item->title = $request->title;
+        $item->content = $request->content;
+
+        if($request->active != null){
+            $item->active = 1;
+        }else{
+            $item->active = 0;
+        }
+
+        DB::beginTransaction();
+        try
+        {   
+            $item->save();
+            DB::commit(); 
+            return redirect(route('demands.index'))->with('mensagem_sucesso', 'Pedido editado com sucesso');
+        }
+        catch(\Exception $ex)                   
+        {
+            DB::rollBack();
+            return redirect(route('demands.create', $item->id))->withErrors($ex->getMessage())->withInput();
+        } 
     }
 
     /**

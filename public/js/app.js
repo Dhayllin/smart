@@ -13562,7 +13562,7 @@ var app = new Vue({
                 axios.delete(url).then(response => {
 
                     this.getSections();
-                    
+
                     $.notify({
                         message: 'Deletado com sucesso!'
                     },{
