@@ -13,8 +13,9 @@
                     <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
             </h4>
         </div>
-        <form action="{{ route('demands.update',$item->id) }}" method="post">
-           @csrf
+        <form action="{{ route('demands.update',$item->id) }}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="PATCH">
+            @csrf
         <div class="card-body ">
             @csrf
             <div class="row">

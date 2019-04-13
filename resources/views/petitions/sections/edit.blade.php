@@ -5,7 +5,7 @@
 @if(Session::has('mensagem_sucesso'))
 <div class="alert alert-success">{{ Session::get('mensagem_sucesso')}}</div>
 @endif
-<div id="list_sections" class="row justify-content-center">         
+<div class="row justify-content-center">         
 <div class="card strpied-tabled-with-hover col-md-10 ">  
         
         <div class="card-header ">
@@ -16,8 +16,7 @@
         <form action="{{ route('sections.update',$item->id) }}" method="post" enctype="multipart/form-data">
             <input type="hidden" name="_method" value="PATCH">
            @csrf
-        <div class="card-body ">
-            @csrf
+        <div class="card-body ">       
             <div class="row">
                 <label for="title" class="col-sm-2 col-form-label">Título:</label>
                 <div class="col-sm-7">

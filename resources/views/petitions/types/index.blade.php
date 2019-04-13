@@ -16,10 +16,10 @@
                     <th>Título</th>
                     <th>Cabeçalho</th>
                     <th>Seção</th>
-                    <th>Número Processo</th>
+                    <th>Núm Processo</th>
                     <th>Autor</th>
                     <th>Réu</th>
-                    <th>Nome da Ação</th>
+                    <th>Nome Ação</th>
                     <th>Ativo</th>
                     <th>Ações</th>
                 </tr>
@@ -37,7 +37,7 @@
                             <input   :checked="item.active"  data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
                         <td>                           
-                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" :href="item.id" v-on:click.prevent.stop="getModalDelete()" data-original-title="Edit">
+                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" :href="'types/'+item.id+'/edit'" data-original-title="Editar">
                                 <i class="fa fa-edit">
                                 </i>
                             </a>

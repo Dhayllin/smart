@@ -17,11 +17,11 @@ class CreatePetitionTypesTable extends Migration
             $table->increments('id'); 
             $table->integer('petition_section_id')->unsigned(); 
             $table->string('title')->nullable();  
-            $table->string('header_address',2)->nullable();  
-            $table->boolean('header_num_process',2)->nullable();  
-            $table->string('header_author',2)->nullable();  
-            $table->string('header_culprit',2)->nullable();  
-            $table->string('header_name_action',2)->nullable();             
+            $table->string('header_address',255)->nullable();  
+            $table->string('header_num_process',255)->nullable();  
+            $table->string('header_author',255)->nullable();  
+            $table->string('header_culprit',255)->nullable();  
+            $table->string('header_name_action',255)->nullable();             
             $table->boolean('active')->nullable();            
             $table->timestamps();
             $table->softDeletes();

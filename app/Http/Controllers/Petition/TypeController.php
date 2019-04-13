@@ -43,7 +43,10 @@ class TypeController extends Controller
      */
     public function create()
     {
-    return view('petitions.types.create');
+        $itens = DB::table('petition_sections')->select('petition_sections.*')
+                                                        ->where('deleted_at',null)    
+                                                        ->get();
+        return view('petitions.types.create',compact('itens'));
     }
 
     /**
@@ -54,7 +57,55 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request, [
+            'title'=>'required',
+            'petition_section_id'=>'required', 
+            'header_address'=>'required', 
+            'header_culprit'=>'required', 
+            'header_num_process'=>'required', 
+            'header_name_action'=>'required', 
+            'header_author'=>'required',        
+            ],
+
+            [
+                'title.required'=>'Campo Título obrigatório.',
+                'petition_section_id.required'=>'Campo Seção obrigatório.', 
+                'header_address.required'=>'Campo Cabeçalho obrigatório.', 
+                'header_culprit.required'=>'Campo Réu obrigatório.', 
+                'header_num_process.required'=>'Campo Num Processo obrigatório.', 
+                'header_name_action.required'=>'Campo Nome Ação obrigatório.', 
+                'header_author.required'=>'Campo Autor obrigatório.',  
+            ]
+        );
+
+        $item = new PetitionType();
+
+        $item->title = $request->title;
+        $item->petition_section_id= $request->petition_section_id;
+        $item->header_address =$request->header_address; 
+        $item->header_culprit =$request->header_culprit; 
+        $item->header_num_process =$request->header_num_process;
+        $item->header_name_action=$request->header_name_action;
+        $item->header_author =$request->header_author;
+                
+        if($request->active != null){
+            $item->active = 1;
+        }else{
+            $item->active = 0;
+        }
+
+        DB::beginTransaction();
+        try
+        {   
+            $item->save();
+            DB::commit(); 
+            return redirect(route('types.index'))->with('mensagem_sucesso', 'Tipo adicionada com sucesso');
+        }
+        catch(\Exception $ex)                   
+        {
+            DB::rollBack();
+            return redirect(route('types.create', $item->id))->withErrors($ex->getMessage())->withInput();
+        }  
     }
 
     /**
@@ -76,7 +127,15 @@ class TypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sections = DB::table('petition_sections')->select('petition_sections.id','petition_sections.title')                                                
+                                                ->where('deleted_at',null)    
+                                                ->get();
+       $item =  DB::table('petition_types')->select('petition_types.id','petition_types.petition_section_id','petition_types.title','petition_types.header_address','petition_types.header_num_process','petition_types.header_author','petition_types.header_culprit','petition_types.header_name_action','petition_types.active')
+                                            ->where('petition_types.id',$id)        
+                                                ->where('petition_types.deleted_at',null)    
+                                                ->first();
+
+        return  view('petitions.types.edit',compact('item','sections'));
     }
 
     /**
@@ -88,7 +147,54 @@ class TypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title'=>'required',
+            'petition_section_id'=>'required', 
+            'header_address'=>'required', 
+            'header_culprit'=>'required', 
+            'header_num_process'=>'required', 
+            'header_name_action'=>'required', 
+            'header_author'=>'required',        
+            ],
+
+            [
+                'title.required'=>'Campo Título obrigatório.',
+                'petition_section_id.required'=>'Campo Seção obrigatório.', 
+                'header_address.required'=>'Campo Cabeçalho obrigatório.', 
+                'header_culprit.required'=>'Campo Réu obrigatório.', 
+                'header_num_process.required'=>'Campo Num Processo obrigatório.', 
+                'header_name_action.required'=>'Campo Nome Ação obrigatório.', 
+                'header_author.required'=>'Campo Autor obrigatório.',  
+            ]
+        );
+        $item = PetitionType::findOrFail($id);
+
+        $item->title = $request->title;
+        $item->petition_section_id= $request->petition_section_id;
+        $item->header_address =$request->header_address; 
+        $item->header_culprit =$request->header_culprit; 
+        $item->header_num_process =$request->header_num_process;
+        $item->header_name_action=$request->header_name_action;
+        $item->header_author =$request->header_author;
+                
+        if($request->active != null){
+            $item->active = 1;
+        }else{
+            $item->active = 0;
+        }
+
+        DB::beginTransaction();
+        try
+        {   
+            $item->save();
+            DB::commit(); 
+            return redirect(route('types.index'))->with('mensagem_sucesso', 'Tipo adicionada com sucesso');
+        }
+        catch(\Exception $ex)                   
+        {
+            DB::rollBack();
+            return redirect(route('types.edit', $item->id))->withErrors($ex->getMessage())->withInput();
+        }  
     }
 
     /**

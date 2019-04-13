@@ -1,13 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="list_sections" class="row justify-content-center">
+<div class="row justify-content-center">
 <div class="card strpied-tabled-with-hover col-md-10 ">  
         <div class="card-header ">
             <h4 class="card-title">Criar Pedido
                     <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
             </h4>
-        </div>
+        </div>        
+                @if(count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error}} </li>
+                        @endforeach 
+                    </ul>
+                </div>                       
+               @endif   
         <form action="{{ route('sections.store') }}" method="post">
            
         <div class="card-body ">
@@ -38,7 +47,6 @@
                             </span>
                         @endif
                     </div>
-                  
                 </div>            
             </div>
             <div class="row">
@@ -47,10 +55,11 @@
                     <input  name="active" checked="" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                 </div>
             </div>
+            <div class="card-footer text-center">
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
         </div>
-        <div class="card-footer text-center">
-            <button type="submit" class="btn btn-primary">Registrar</button>
-        </div>
+        
         </div>
     </div>
 </div>
