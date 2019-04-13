@@ -14,7 +14,7 @@
                 <thead>
                 <tr>
                     <th>Título</th>
-                    <th>Cabeçalho</th>
+                    <th>Endereçamento</th>
                     <th>Seção</th>
                     <th>Núm Processo</th>
                     <th>Autor</th>

@@ -59,7 +59,7 @@
             </div> 
             </div>    
             <div class="col-md-4">             
-            <label for="header_address">Cabeçalho: </label>
+            <label for="header_address">Endereçamento: </label>
             <div class="form-group has-feedback {{ $errors->has('header_address') ? 'has-error' : '' }}">
                 <select tabindex="-98" name="header_address" data-original-index="26"class="selectpicker">
                     <option value="">Selecione</option>
