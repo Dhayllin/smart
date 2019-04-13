@@ -97,7 +97,7 @@ class SectionController extends Controller
      */
     public function show($id)
     {
-        $item = PetitionSection::findOrFail($id);
+       
     }
 
     /**
@@ -108,7 +108,9 @@ class SectionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = PetitionSection::findOrFail($id);
+
+        return view('petitions.sections.edit',compact('item'));
     }
 
     /**
@@ -120,7 +122,30 @@ class SectionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $item = PetitionSection::findOrFail($id);
+
+        $item->title = $request->title;
+        $item->description = $request->description;
+
+        if($request->active != null){
+            $item->active = 1;
+        }else{
+            $item->active = 0;
+        }
+
+        DB::beginTransaction();
+        try
+        {   
+            $item->update();
+            DB::commit(); 
+            return redirect(route('sections.index'))->with('mensagem_sucesso', 'Seção Editado com sucesso');
+        }
+        catch(\Exception $ex)                   
+        {
+            DB::rollBack();
+            return redirect(route('sections.create', $item->id))->withErrors($ex->getMessage())->withInput();
+        }  
     }
 
     /**

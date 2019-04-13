@@ -13,7 +13,8 @@
                     <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
             </h4>
         </div>
-        <form action="{{ route('sections.store') }}" method="post">
+        <form action="{{ route('sections.update',$item->id) }}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="PATCH">
            @csrf
         <div class="card-body ">
             @csrf
@@ -26,10 +27,10 @@
                 </div>           
             </div>   
             <div class="row">
-                <label for="content" class="col-sm-2 col-form-label">Descrição:</label>
+                <label for="description" class="col-sm-2 col-form-label">Descrição:</label>
                 <div class="col-sm-7">
                     <div class="form-group">
-                        <input class="form-control" name="content"  type="text" value="{{$item->content}}">
+                        <input class="form-control" name="description"  type="text" value="{{$item->description}}">
                     </div>
                 </div>            
             </div>
