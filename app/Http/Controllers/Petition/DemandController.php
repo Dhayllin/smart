@@ -66,13 +66,9 @@ class DemandController extends Controller
         $item = new PetitionDemand();
 
         $item->title = $request->title;
-        $item->content = $request->content;
-
-        if($request->active != null){
-            $item->active = 1;
-        }else{
-            $item->active = 0;
-        }
+        $item->content = $request->content;   
+        $item->active = 1;
+       
 
         DB::beginTransaction();
         try

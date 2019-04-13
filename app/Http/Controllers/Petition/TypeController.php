@@ -87,12 +87,7 @@ class TypeController extends Controller
         $item->header_num_process =$request->header_num_process;
         $item->header_name_action=$request->header_name_action;
         $item->header_author =$request->header_author;
-                
-        if($request->active != null){
-            $item->active = 1;
-        }else{
-            $item->active = 0;
-        }
+        $item->active = 1;      
 
         DB::beginTransaction();
         try

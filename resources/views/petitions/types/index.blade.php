@@ -37,11 +37,11 @@
                             <input   :checked="item.active"  data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
                         <td>                           
-                            <a rel="tooltip" class="btn btn-link btn-warning table-action edit" :href="'types/'+item.id+'/edit'" data-original-title="Editar">
+                            <a rel="tooltip"  type="button" class="btn btn-primary" :href="'types/'+item.id+'/edit'" data-original-title="Editar">
                                 <i class="fa fa-edit">
                                 </i>
                             </a>
-                            <a rel="tooltip" class="btn btn-link btn-danger table-action remove" href="#" v-on:click.prevent.stop="deleteTypes(item)" data-original-title="Eliminar">
+                            <a rel="tooltip" type="button" class="btn btn-danger " href="#" v-on:click.prevent.stop="deleteTypes(item)" data-original-title="Eliminar">
                                 <i class="fa fa-remove">
                                 </i>
                             </a>                            

@@ -68,12 +68,8 @@ class SectionController extends Controller
 
         $item->title = $request->title;
         $item->description = $request->description;
-
-        if($request->active != null){
-            $item->active = 1;
-        }else{
-            $item->active = 0;
-        }
+        $item->active = 1;
+        
 
         DB::beginTransaction();
         try
