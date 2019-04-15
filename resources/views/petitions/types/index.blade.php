@@ -50,20 +50,15 @@
                                 </i>
                                 TIPO : <strong>@{{item.id}} </strong>
                             </a> 
-                           
                             <div class="modal fade" id="alertDelete"   tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content col-md-8">
                                                 <div class="modal-header ">
-                                                        <h4>Deletar tipo ?</h4> 
+                                                        <h4>Deletar <strong>@{{item.id}} </strong>?</h4> 
                                                         <button type="button" class="close" data-dismiss="modal">
                                                                 <span>&times;</span>
                                                         </button>                                                    
-                                                </div>
-                                                 <div class=" modal-body"> 
-                                                    TIPO : <strong>@{{item.id}} </strong>
-                                                 </div>
-                                         
+                                                </div>                                         
                                             <div class="modal-footer">
                                                 <a rel="tooltip" type="button"  v-on:click.prevent.stop="deleteTypes(item)" class="btn btn-danger" href="#">
                                                     Confirmar ?
