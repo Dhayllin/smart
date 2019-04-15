@@ -35,7 +35,8 @@
                         <td>@{{ item.header_num_process}}</td>
                         <td>@{{ item.header_author}}</td>
                         <td>@{{ item.header_culprit}}</td>
-                        <td>@{{ item.header_name_action}}</td>                    
+                        <td>@{{ item.header_name_action}}</td>  
+                        <td>@{{item.id}} </td>                  
                         <td>
                             <input   :checked="item.active"  data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
@@ -47,9 +48,10 @@
                             <a rel="tooltip" type="button" class="btn btn-danger " data-toggle="modal" data-target="#alertDelete" href="#" data-original-title="Eliminar">
                                 <i class="fa fa-remove">
                                 </i>
+                                TIPO : <strong>@{{item.id}} </strong>
                             </a> 
                            
-                            <div class="modal fade" id="alertDelete"    tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal fade" id="alertDelete"   tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content col-md-8">
                                                 <div class="modal-header ">
@@ -59,26 +61,24 @@
                                                         </button>                                                    
                                                 </div>
                                                  <div class=" modal-body"> 
-                                                    TIPO : <strong>@{{item.title}} </strong>
+                                                    TIPO : <strong>@{{item.id}} </strong>
                                                  </div>
                                          
                                             <div class="modal-footer">
-                                                    <button type="button" v-on:click.prevent.stop="deleteTypes(item)"class="close" style="color:white;" data-dismiss="modal"><strong>Confirmar</strong>
-                                                    </button>   
-                                                </a>
+                                                <a rel="tooltip" type="button"  v-on:click.prevent.stop="deleteTypes(item)" class="btn btn-danger" href="#">
+                                                    Confirmar ?
+                                                </a> 
                                             </div> 
                                         </div>
                                     </div>
-                                </div>                          
+                                </div>    
+                                TIPO : <strong>@{{item.id}} xx</strong>                      
                         </td>                        
                     </tr>                                             
                 </tbody>
             </table>
         </div>
     </div>
-<form method="DELETE" >
-
-</form> 
 </div> 
 @endsection
 

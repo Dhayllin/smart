@@ -36,10 +36,31 @@
                                 <i class="fa fa-edit">
                                 </i>
                             </a>
-                            <a rel="tooltip" tytpe="button" class="btn btn-danger" href="#" v-on:click.prevent.stop="deleteSections(item)" data-original-title="Eliminar">
+                            <a rel="tooltip" type="button" class="btn btn-danger " data-toggle="modal" data-target="#alertDelete" href="#" data-original-title="Eliminar">
                                 <i class="fa fa-remove">
                                 </i>
-                            </a>
+                            </a> 
+                            <div class="modal fade" id="alertDelete" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content col-md-8">
+                                                <div class="modal-header ">
+                                                        <h4>Deletar tipo ?</h4> 
+                                                        <button type="button" class="close" data-dismiss="modal">
+                                                                <span>&times;</span>
+                                                        </button>                                                    
+                                                </div>
+                                                 <div class=" modal-body"> 
+                                                    Seção : <strong>@{{item.title}} </strong>
+                                                 </div>
+                                         
+                                            <div class="modal-footer">
+                                                <a rel="tooltip" type="button"   class="btn btn-danger"  v-on:click="deleteTypes(item)" href="#">
+                                                    Confirmar ?
+                                                </a> 
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>  
                         </td>                                                
                     </tr>                                             
                 </tbody>

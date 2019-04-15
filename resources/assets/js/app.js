@@ -32,7 +32,7 @@ var app = new Vue({
                 axios.delete(url).then(response => {
 
                     this.getSections();
-
+                    $('.modal').modal('hide');
                     $.notify({
                         message: 'Deletado com sucesso!'
                     },{
@@ -63,8 +63,8 @@ var app = new Vue({
             var url = "demands/" + item.id;        
                 axios.delete(url).then(response => {
                     
-                    this.getDemands();
-
+                    this.getDemands();                   
+                    $('.modal').modal('hide');
                     $.notify({
                         message: 'Deletado com sucesso!'
                     },{
@@ -75,11 +75,6 @@ var app = new Vue({
     }
 })
 
-// register modal component
-Vue.component('modal', {
-    template: '#modal-template'
-})
-
 var app = new Vue({
     el:"#list_types",    
     created: function(){
@@ -87,7 +82,7 @@ var app = new Vue({
     }, 
     data:{
         types: [],
-        showModal: false
+        showModal: true
     },
     methods: {
         getTypes: function(){
@@ -97,15 +92,14 @@ var app = new Vue({
             })
         },
 
-        getModalDelete: function(){
-                alert();
+        getModalId: function(item){               
+            $('#alertDelete').modal('show');
         },
         deleteTypes: function(item){            
-            var url = "types/" + item.id;        
+            var url = "types/" + item.id; 
                 axios.delete(url).then(response => {
-
                     this.getTypes();
-
+                    $('.modal').modal('hide');
                     $.notify({
                         message: 'Deletado com sucesso!'
                     },{
