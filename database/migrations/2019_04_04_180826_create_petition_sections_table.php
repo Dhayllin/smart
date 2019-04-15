@@ -15,8 +15,8 @@ class CreatePetitionSectionsTable extends Migration
     {
         Schema::create('petition_sections', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable();
-            $table->string('description')->nullable(); 
+            $table->string('title',255)->nullable();
+            $table->string('description',255)->nullable(); 
             $table->boolean('active')->nullable(); 
             $table->timestamps();   
             $table->softDeletes();           

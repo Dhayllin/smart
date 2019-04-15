@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Session::has('mensagem_sucesso'))
+<div class="alert alert-success">{{ Session::get('mensagem_sucesso')}}</div>
+@endif
 <div id="list_types" class="row justify-content-center">
 <div class="card strpied-tabled-with-hover table-full-width table-responsive">       
         <div class="card-header ">
@@ -41,16 +44,41 @@
                                 <i class="fa fa-edit">
                                 </i>
                             </a>
-                            <a rel="tooltip" type="button" class="btn btn-danger " href="#" v-on:click.prevent.stop="deleteTypes(item)" data-original-title="Eliminar">
+                            <a rel="tooltip" type="button" class="btn btn-danger " data-toggle="modal" data-target="#alertDelete" href="#" data-original-title="Eliminar">
                                 <i class="fa fa-remove">
                                 </i>
-                            </a>                            
+                            </a> 
+                           
+                            <div class="modal fade" id="alertDelete"    tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content col-md-8">
+                                                <div class="modal-header ">
+                                                        <h4>Deletar tipo ?</h4> 
+                                                        <button type="button" class="close" data-dismiss="modal">
+                                                                <span>&times;</span>
+                                                        </button>                                                    
+                                                </div>
+                                                 <div class=" modal-body"> 
+                                                    TIPO : <strong>@{{item.title}} </strong>
+                                                 </div>
+                                         
+                                            <div class="modal-footer">
+                                                    <button type="button" v-on:click.prevent.stop="deleteTypes(item)"class="close" style="color:white;" data-dismiss="modal"><strong>Confirmar</strong>
+                                                    </button>   
+                                                </a>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>                          
                         </td>                        
                     </tr>                                             
                 </tbody>
             </table>
         </div>
-    </div> 
-</div>   
+    </div>
+<form method="DELETE" >
+
+</form> 
+</div> 
 @endsection
 

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Session::has('mensagem_sucesso'))
+<div class="alert alert-success">{{ Session::get('mensagem_sucesso')}}</div>
+@endif
 <div class="row justify-content-center">
 <div class="card strpied-tabled-with-hover col-md-10 ">  
         <div class="card-header ">

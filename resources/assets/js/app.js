@@ -112,6 +112,6 @@ var app = new Vue({
                         type: 'danger'
                     });
                 }); 
-        },
+        },    
     }
 })

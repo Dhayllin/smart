@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-@if(Session::has('mensagem_sucesso'))
-<div class="alert alert-success">{{ Session::get('mensagem_sucesso')}}</div>
+@if(Session::has('erro'))
+<div class="alert alert-danger">{{ Session::get('erro')}}</div>
 @endif
 <div id="list_demands" class="row justify-content-center">
 <div class="card strpied-tabled-with-hover col-md-10 ">  
@@ -127,7 +127,26 @@
                             </span>
                         @endif
                     </div>           
-                    </div>               
+                </div>  
+                <div class="col">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                    <label for="section_ids">Seções</label>  
+                                    @foreach ($itens as $item)
+                                    <div class="form-check checkbox-inline">
+                                            <label class="form-check-label">
+                                            <input id="section_ids" name="section_ids[]"class="form-check-input" value="{{$item->id}}" type="checkbox">
+                                                <span class="form-check-sign"></span>
+                                               {{$item->title}}
+                                            </label>
+                                        </div>                            
+                                    @endforeach 
+
+                            </div>                          
+                        </div>
+                    </div>                    
+                </div>  
         </div>
         <div class="card-footer text-center">
             <button type="submit" class="btn btn-primary">Salvar</button>
