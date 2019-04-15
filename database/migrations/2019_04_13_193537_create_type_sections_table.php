@@ -17,6 +17,7 @@ class CreateTypeSectionsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('type_id');
             $table->integer('section_id');  
+            $table->timestamps();
         });
     }
 

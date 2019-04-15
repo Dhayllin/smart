@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\PetitionType;
 use App\Models\TypeSection;
+use Illuminate\Support\Collection;
 
 class TypeController extends Controller
 {
@@ -57,23 +58,61 @@ class TypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    { 
-       $item = new PetitionType();
-     
-       $item = 1;      
-   
-           $type_section= new TypeSection();          
-           $type_section=$request->section_ids;
+    {    
+        $this->validate($request, [
+            'title'=>'required',
+            'petition_section_id'=>'required', 
+            'header_address'=>'required', 
+            'header_culprit'=>'required', 
+            'header_num_process'=>'required', 
+            'header_name_action'=>'required', 
+            'header_author'=>'required',        
+            ],
+            [
+                'title.required'=>'Campo Título obrigatório.',
+                'petition_section_id.required'=>'Campo Seção obrigatório.', 
+                'header_address.required'=>'Campo Cabeçalho obrigatório.', 
+                'header_culprit.required'=>'Campo Réu obrigatório.', 
+                'header_num_process.required'=>'Campo Num Processo obrigatório.', 
+                'header_name_action.required'=>'Campo Nome Ação obrigatório.', 
+                'header_author.required'=>'Campo Autor obrigatório.',  
+            ]
+        );
+        $item = new PetitionType();
+        $item->title = $request->title;
+        $item->petition_section_id= $request->petition_section_id;
+        $item->header_address =$request->header_address; 
+        $item->header_culprit =$request->header_culprit; 
+        $item->header_num_process =$request->header_num_process;
+        $item->header_name_action=$request->header_name_action;
+        $item->header_author =$request->header_author;
+                
+        if($request->active != null){
+            $item->active = 1;
+        }else{
+            $item->active = 0;
+        }
+        DB::beginTransaction();
+        try
+        {   
+            $item->save();
 
-           $arr[]=  new TypeSection();    
-           $arr2[]=  new TypeSection();      
-           $arr = ['itens'=>$type_section];
+            foreach($request->section_ids as $id){
 
-           for($posicao = 0; $posicao < $arr; $posicao++)
-                {
-                  
-                }
-                return $type_section;
+                $section_types = new TypeSection();
+                $section_types->type_id = $item->id;
+                $section_types->section_id = $id;
+                $section_types->save();             
+            }
+
+            DB::commit(); 
+            return redirect(route('types.index'))->with('mensagem_sucesso', 'Tipo adicionada com sucesso');
+        }
+        catch(\Exception $ex)                   
+        {
+            DB::rollBack();
+            return redirect(route('types.create', $item->id))->withErrors($ex->getMessage())->withInput();
+        }  
     }
 
     /**
@@ -177,3 +216,13 @@ class TypeController extends Controller
         $type->delete(); 
     }
 }
+
+/*foreach($request->section_ids as $id){
+
+            $section_types = new TypeSection();
+            $section_types->type_id = 1;
+            $section_types->section_id = $id;
+            $section_types->save();
+            $section_types->push($section_types);
+        }
+*/

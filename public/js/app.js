@@ -13622,9 +13622,9 @@ var app = new Vue({
             })
         },
 
-        getModalId: function(item){   
-             
-              deleteTypes(item.id)
+        getModalId: function(item){          
+            this.selectedUser = item;
+            $('#alertDelete').modal('show');
         },
         deleteTypes: function(item){            
             var url = "types/" + item.id; 

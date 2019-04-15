@@ -38,7 +38,16 @@
                                 <i class="fa fa-remove">
                                 </i>
                             </a> 
-                            <div class="modal fade" id="alertDelete" tabindex="-1" role="dialog" aria-hidden="true">
+                             
+                        </td>                       
+                    </tr>                                             
+                </tbody>
+            </table>
+        </div>
+    </div> 
+</div>   
+
+<div class="modal fade" id="alertDelete" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content col-md-8">
                                                 <div class="modal-header ">
@@ -52,18 +61,11 @@
                                                  </div>
                                          
                                             <div class="modal-footer">
-                                                <a rel="tooltip" type="button"   class="btn btn-danger"  v-on:click="deleteTypes(item)" href="#">
+                                                <a rel="tooltip" type="button"   class="btn btn-danger"  v-on:click="deleteDemands(item)" href="#">
                                                     Confirmar
                                                 </a> 
                                             </div> 
                                         </div>
                                     </div>
-                                </div>  
-                        </td>                       
-                    </tr>                                             
-                </tbody>
-            </table>
-        </div>
-    </div> 
-</div>   
+                                </div> 
 @endsection

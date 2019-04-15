@@ -92,8 +92,9 @@ var app = new Vue({
             })
         },
 
-        getModalId: function(item){               
-            $('#alertDelete').modal('show');
+        getModalId: function(item){          
+            this.selectedUser = item;
+            Event.$emit('alertDelete', item);
         },
         deleteTypes: function(item){            
             var url = "types/" + item.id; 
