@@ -35,24 +35,11 @@
                             <a rel="tooltip" tytpe="button" class="btn btn-primary " :href="'sections/'+item.id+'/edit'" data-original-title="Edit">
                                 <i class="fa fa-edit">
                                 </i>
-                            </a>
-                            <div class="modal fade" id="alertDelete"   tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content col-md-8">
-                                        <div class="modal-header ">
-                                                <h4>Deletar <strong>@{{item.id}} </strong>?</h4> 
-                                                <button type="button" class="close" data-dismiss="modal">
-                                                        <span>&times;</span>
-                                                </button>                                                    
-                                        </div>                                         
-                                        <div class="modal-footer">
-                                            <a rel="tooltip" type="button"  v-on:click.prevent.stop="deleteSections(item)" class="btn btn-danger" href="#">
-                                                Confirmar ?
-                                            </a> 
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>  
+                            </a>          
+                            <a rel="tooltip" type="button" class="btn btn-danger " v-on:click.prevent.stop="deleteSections(item)" href="#" data-original-title="Eliminar">
+                                <i class="fa fa-remove">
+                                </i>
+                            </a> 
                         </td>                                                
                     </tr>                                             
                 </tbody>
