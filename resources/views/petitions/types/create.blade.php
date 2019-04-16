@@ -28,24 +28,7 @@
                     </div>                   
                 </div>         
             </div>  
-            <div class="row">  
-                <div class="col-md-4">             
-                <label for="petition_section_id">Seções: </label>
-                <div class="form-group has-feedback {{ $errors->has('petition_section_id') ? 'has-error' : '' }}">
-                <select tabindex="-98" name="petition_section_id" data-original-index="26"class="selectpicker">
-                    <option value="">Selecione</option>
-                    @foreach ($itens as $item)
-                    <option value="{{$item->id}}">{{$item->title}}</option>
-                    @endforeach
-                </select>    
-                <span class="#"></span>
-                @if ($errors->has('petition_section_id'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('petition_section_id') }}</strong>
-                    </span>
-                @endif                      
-            </div> 
-            </div>    
+            <div class="row"> 
             <div class="col-md-4">             
             <label for="header_address">Endereçamento: </label>
             <div class="form-group has-feedback {{ $errors->has('header_address') ? 'has-error' : '' }}">
@@ -78,24 +61,24 @@
                         @endif 
                     </div>           
                 </div>
+                <div class="col-md-4">             
+                    <label for="header_num_process">Núm Processo: </label>
+                    <div class="form-group has-feedback {{ $errors->has('header_num_process') ? 'has-error' : '' }}">
+                        <select tabindex="-98" name="header_num_process" data-original-index="26"class="selectpicker">
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select> 
+                         <span class="#"></span>
+                        @if ($errors->has('header_num_process'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('header_num_process') }}</strong>
+                            </span>
+                        @endif 
+                    </div>           
+                    </div> 
             </div>
-            <div class="row">  
-                    <div class="col-md-4">             
-                            <label for="header_num_process">Núm Processo: </label>
-                            <div class="form-group has-feedback {{ $errors->has('header_num_process') ? 'has-error' : '' }}">
-                                <select tabindex="-98" name="header_num_process" data-original-index="26"class="selectpicker">
-                                    <option value="">Selecione</option>
-                                    <option value="Sim">Sim</option>
-                                    <option value="Não">Não</option>
-                                </select> 
-                                 <span class="#"></span>
-                                @if ($errors->has('header_num_process'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('header_num_process') }}</strong>
-                                    </span>
-                                @endif 
-                            </div>           
-                            </div>                           
+            <div class="row">              
                 <div class="col-md-4">             
                 <label for="header_name_action">Nome Ação: </label>
                 <div class="form-group has-feedback {{ $errors->has('header_name_action') ? 'has-error' : '' }}">
@@ -131,8 +114,9 @@
                 <div class="col">
                     <div class="form-group">
                         <div class="row">
+                                <label for="section_ids">Seções</label>  
                             <div class="col">
-                                    <label for="section_ids">Seções</label>  
+                                 
                                     @foreach ($itens as $item)
                                     <div class="form-check checkbox-inline">
                                             <label class="form-check-label">

@@ -36,7 +36,6 @@
                         <td>@{{ item.header_author}}</td>
                         <td>@{{ item.header_culprit}}</td>
                         <td>@{{ item.header_name_action}}</td>  
-                        <td>@{{item.id}} </td>                  
                         <td>
                             <input   :checked="item.active"  data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>

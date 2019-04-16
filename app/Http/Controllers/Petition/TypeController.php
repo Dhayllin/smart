@@ -35,7 +35,26 @@ class TypeController extends Controller
                                                 ->leftjoin('petition_sections','petition_types.petition_section_id','petition_sections.id')
                                                 ->where('petition_types.deleted_at',null)    
                                                 ->get();
-        return  $types;
+        $listaTypes = new Collection();
+
+        foreach($types as $type){
+            
+            $list_types = new PetitionType();
+
+            $list_types->id                 = $type->id;
+            $list_types->title              = $type->title;
+            $list_types->title_section      = $type->title_section;
+            $list_types->header_address     = PetitionType::headerAddress($type->header_address);
+            $list_types->header_num_process = PetitionType::headerNumProcess($type->header_num_process);
+            $list_types->header_author      = PetitionType::headerAuthor($type->header_author); 
+            $list_types->header_culprit     = PetitionType::headerCulprit($type->header_culprit); 
+            $list_types->header_name_action = PetitionType::headerNameAction($type->header_name_action);  
+            $list_types->active             = $type->active;          
+
+            $listaTypes->push($list_types);
+        }
+        
+        return $listaTypes;
     }
 
     /**
@@ -137,11 +156,11 @@ class TypeController extends Controller
         $sections = DB::table('petition_sections')->select('petition_sections.id','petition_sections.title')                                                
                                                 ->where('deleted_at',null)    
                                                 ->get();
-       $item =  DB::table('petition_types')->select('petition_types.id','petition_types.petition_section_id','petition_types.title','petition_types.header_address','petition_types.header_num_process','petition_types.header_author','petition_types.header_culprit','petition_types.header_name_action','petition_types.active')
+        $item =  DB::table('petition_types')->select('petition_types.id','petition_types.petition_section_id','petition_types.title','petition_types.header_address','petition_types.header_num_process','petition_types.header_author','petition_types.header_culprit','petition_types.header_name_action','petition_types.active')
                                             ->where('petition_types.id',$id)        
                                                 ->where('petition_types.deleted_at',null)    
                                                 ->first();
-
+                                                
         return  view('petitions.types.edit',compact('item','sections'));
     }
 
@@ -152,56 +171,9 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $this->validate($request, [
-            'title'=>'required',
-            'petition_section_id'=>'required', 
-            'header_address'=>'required', 
-            'header_culprit'=>'required', 
-            'header_num_process'=>'required', 
-            'header_name_action'=>'required', 
-            'header_author'=>'required',        
-            ],
-
-            [
-                'title.required'=>'Campo Título obrigatório.',
-                'petition_section_id.required'=>'Campo Seção obrigatório.', 
-                'header_address.required'=>'Campo Cabeçalho obrigatório.', 
-                'header_culprit.required'=>'Campo Réu obrigatório.', 
-                'header_num_process.required'=>'Campo Num Processo obrigatório.', 
-                'header_name_action.required'=>'Campo Nome Ação obrigatório.', 
-                'header_author.required'=>'Campo Autor obrigatório.',  
-            ]
-        );
-        $item = PetitionType::findOrFail($id);
-
-        $item->title = $request->title;
-        $item->petition_section_id= $request->petition_section_id;
-        $item->header_address =$request->header_address; 
-        $item->header_culprit =$request->header_culprit; 
-        $item->header_num_process =$request->header_num_process;
-        $item->header_name_action=$request->header_name_action;
-        $item->header_author =$request->header_author;
-                
-        if($request->active != null){
-            $item->active = 1;
-        }else{
-            $item->active = 0;
-        }
-
-        DB::beginTransaction();
-        try
-        {   
-            $item->save();
-            DB::commit(); 
-            return redirect(route('types.index'))->with('mensagem_sucesso', 'Tipo adicionada com sucesso');
-        }
-        catch(\Exception $ex)                   
-        {
-            DB::rollBack();
-            return redirect(route('types.edit', $item->id))->withErrors($ex->getMessage())->withInput();
-        }  
+        return$request;
     }
 
     /**
@@ -217,12 +189,6 @@ class TypeController extends Controller
     }
 }
 
-/*foreach($request->section_ids as $id){
-
-            $section_types = new TypeSection();
-            $section_types->type_id = 1;
-            $section_types->section_id = $id;
-            $section_types->save();
-            $section_types->push($section_types);
-        }
-*/
+/*  $list_types->id    
+         
+            $list_types->header_name_action =
