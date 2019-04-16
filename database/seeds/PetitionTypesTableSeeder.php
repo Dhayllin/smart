@@ -16,7 +16,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>1,
                 'title'                 =>'Título Tipo1',
-                'petition_section_id'   =>1,
                 'header_address'        =>'IV',
                 'header_num_process'    => 'S',
                 'header_author'         =>'QC',
@@ -29,7 +28,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>2,
                 'title'                 =>'Título Tipo2',
-                'petition_section_id'   =>1,
                 'header_address'        =>'NV',
                 'header_num_process'    =>"N",
                 'header_author'         =>'JQ',
@@ -42,7 +40,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>3,
                 'title'                 =>'Título Tipo3',
-                'petition_section_id'   =>1,
                 'header_address'        =>'IV',
                 'header_num_process'    =>'S',
                 'header_author'         =>'QC',
@@ -55,7 +52,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>4,
                 'title'                 =>'Título Tipo3',
-                'petition_section_id'   =>1,
                 'header_address'        =>'NV',
                 'header_num_process'    =>'N',
                 'header_author'         =>'JQ',
@@ -68,7 +64,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>5,
                 'title'                 =>'Título Tipo1',
-                'petition_section_id'   =>1,
                 'header_address'        =>'IV',
                 'header_num_process'    => 'S',
                 'header_author'         =>'QC',
@@ -81,7 +76,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>6,
                 'title'                 =>'Título Tipo2',
-                'petition_section_id'   =>1,
                 'header_address'        =>'NV',
                 'header_num_process'    =>"N",
                 'header_author'         =>'JQ',
@@ -94,7 +88,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>7,
                 'title'                 =>'Título Tipo3',
-                'petition_section_id'   =>1,
                 'header_address'        =>'IV',
                 'header_num_process'    =>'S',
                 'header_author'         =>'QC',
@@ -107,7 +100,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>8,
                 'title'                 =>'Título Tipo3',
-                'petition_section_id'   =>1,
                 'header_address'        =>'NV',
                 'header_num_process'    =>'N',
                 'header_author'         =>'JQ',
@@ -120,7 +112,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>9,
                 'title'                 =>'Título Tipo1',
-                'petition_section_id'   =>1,
                 'header_address'        =>'IV',
                 'header_num_process'    => 'S',
                 'header_author'         =>'QC',
@@ -133,7 +124,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>10,
                 'title'                 =>'Título Tipo2',
-                'petition_section_id'   =>1,
                 'header_address'        =>'NV',
                 'header_num_process'    =>"N",
                 'header_author'         =>'JQ',
@@ -146,7 +136,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>11,
                 'title'                 =>'Título Tipo3',
-                'petition_section_id'   =>1,
                 'header_address'        =>'IV',
                 'header_num_process'    =>'S',
                 'header_author'         =>'QC',
@@ -159,7 +148,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>12,
                 'title'                 =>'Título Tipo3',
-                'petition_section_id'   =>1,
                 'header_address'        =>'NV',
                 'header_num_process'    =>'N',
                 'header_author'         =>'JQ',
@@ -172,7 +160,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>13,
                 'title'                 =>'Título Tipo1',
-                'petition_section_id'   =>1,
                 'header_address'        =>'IV',
                 'header_num_process'    => 'S',
                 'header_author'         =>'QC',
@@ -185,7 +172,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>14,
                 'title'                 =>'Título Tipo2',
-                'petition_section_id'   =>1,
                 'header_address'        =>'NV',
                 'header_num_process'    =>"N",
                 'header_author'         =>'JQ',
@@ -198,7 +184,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>15,
                 'title'                 =>'Título Tipo3',
-                'petition_section_id'   =>1,
                 'header_address'        =>'IV',
                 'header_num_process'    =>'S',
                 'header_author'         =>'QC',
@@ -211,7 +196,6 @@ class PetitionTypesTableSeeder extends Seeder
             [
                 'id'                    =>16,
                 'title'                 =>'Título Tipo3',
-                'petition_section_id'   =>1,
                 'header_address'        =>'NV',
                 'header_num_process'    =>'N',
                 'header_author'         =>'JQ',

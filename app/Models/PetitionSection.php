@@ -15,6 +15,11 @@ class PetitionSection extends Model
      * @var array
      */
     protected $fillable = [
-        'id','title','description','active'
+        'id','title_section','description','active'
     ];
+
+    public function types(){
+        return $this->belongsToMany(PetitionType::class,'type_sections');
+    }
+ 
 }

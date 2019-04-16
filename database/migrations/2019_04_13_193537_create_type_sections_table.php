@@ -15,9 +15,12 @@ class CreateTypeSectionsTable extends Migration
     {
         Schema::create('type_sections', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('type_id');
-            $table->integer('section_id');  
+            $table->integer('petition_type_id')->unsigned(); 
+            $table->integer('petition_section_id')->unsigned();   
             $table->timestamps();
+
+            $table->foreign('petition_type_id')->references('id')->on('petition_types')->onDelete('cascade');        
+            $table->foreign('petition_section_id')->references('id')->on('petition_sections')->onDelete('cascade');              
         });
     }
 

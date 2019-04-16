@@ -34,8 +34,8 @@
             <div class="form-group has-feedback {{ $errors->has('header_address') ? 'has-error' : '' }}">
                 <select tabindex="-98" name="header_address" data-original-index="26"class="selectpicker">
                     <option value="">Selecione</option>
-                    <option value="Identificar a vara">Identificar a vara</option>
-                    <option value="Não Identificar a vara">Não Identificar a vara</option>
+                    <option value="IV">Identificar a vara</option>
+                    <option value="NV">Não Identificar a vara</option>
                 </select>  
                 <span class="#"></span>
                 @if ($errors->has('header_address'))
@@ -50,8 +50,8 @@
                     <div class="form-group has-feedback {{ $errors->has('header_culprit') ? 'has-error' : '' }}">
                         <select tabindex="-98" name="header_culprit"  data-original-index="26"class="selectpicker">
                             <option value="">Selecione</option>
-                            <option value="Qualificação completa">Qualificação completa</option>
-                            <option value="Já qualificado">Já qualificado</option>
+                            <option value="QC">Qualificação completa</option>
+                            <option value="JQ">Já qualificado</option>
                         </select> 
                         <span class="#"></span>
                         @if ($errors->has('header_culprit'))
@@ -66,8 +66,8 @@
                     <div class="form-group has-feedback {{ $errors->has('header_num_process') ? 'has-error' : '' }}">
                         <select tabindex="-98" name="header_num_process" data-original-index="26"class="selectpicker">
                             <option value="">Selecione</option>
-                            <option value="Sim">Sim</option>
-                            <option value="Não">Não</option>
+                            <option value="S">Sim</option>
+                            <option value="N">Não</option>
                         </select> 
                          <span class="#"></span>
                         @if ($errors->has('header_num_process'))
@@ -84,8 +84,8 @@
                 <div class="form-group has-feedback {{ $errors->has('header_name_action') ? 'has-error' : '' }}">
                     <select tabindex="-98" name="header_name_action" data-original-index="26"class="selectpicker">
                         <option value="">Selecione</option>
-                        <option value="Linha de baixo">Linha de baixo</option>
-                        <option value="Mesma linha">Mesma linha</option>
+                        <option value="LB">Linha de baixo</option>
+                        <option value="ML">Mesma linha</option>
                     </select>  
                     <span class="#"></span>
                     @if ($errors->has('header_name_action'))
@@ -100,8 +100,8 @@
                     <div class="form-group has-feedback {{ $errors->has('header_name_action') ? 'has-error' : '' }}">
                         <select tabindex="-98"  name="header_author"data-original-index="26"class="selectpicker">
                             <option value="">Selecione</option>
-                            <option value="Qualificação completa">Qualificação completa</option>
-                            <option value="Já qualificado">Já qualificado</option>
+                            <option value="QC">Qualificação completa</option>
+                            <option value="JQ">Já qualificado</option>
                         </select>  
                         <span class="#"></span>
                         @if ($errors->has('header_name_action'))
@@ -122,7 +122,7 @@
                                             <label class="form-check-label">
                                             <input id="section_ids" name="section_ids[]"class="form-check-input" value="{{$item->id}}" type="checkbox">
                                                 <span class="form-check-sign"></span>
-                                               {{$item->title}}
+                                               {{$item->title_section}}
                                             </label>
                                         </div>                            
                                     @endforeach 

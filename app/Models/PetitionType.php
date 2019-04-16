@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class PetitionType extends Model
 {
@@ -16,7 +17,7 @@ class PetitionType extends Model
      * @var array
      */
     protected $fillable = [
-       'petition_section_id','title','active','header_address','header_num_process','header_author',
+       'title','active','header_address','header_num_process','header_author',
        'header_culprit','header_name_action'
     ];
 
@@ -82,5 +83,9 @@ class PetitionType extends Model
             return $header_name_actions;
 
         return $header_name_actions[$header_name_action];       
+    }
+
+    public function sections(){
+        return $this->belongsToMany(PetitionSection::class,'type_sections');
     }
 }

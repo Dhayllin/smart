@@ -31,7 +31,7 @@
                 <div class="col">
                     <label for="active">Ativo:</label>
                     <div class="form-group has-feedback {{ $errors->has('razao_social') ? 'has-error' : '' }}">
-                    <input  checked="false" name="active"data-toggle="swtch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
+                    <input  checked="" name="active"data-toggle="swtch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                     </div>
                 </div>          
             </div>  
@@ -95,50 +95,69 @@
                             </span>
                         @endif 
                     </div>           
-                    </div>    
+                </div> 
+                <div class="col-md-4">             
+                        <label for="header_name_action">Autor: </label>
+                        <div class="form-group has-feedback {{ $errors->has('header_name_action') ? 'has-error' : '' }}">
+                            <select tabindex="-98"  name="header_author"data-original-index="26"class="selectpicker">
+                                <option value="">Selecione</option>
+                                <option value="QC" @if ($item->header_author == "QC")
+                                    {{'selected'}}
+                                @endif>Qualificação completa</option>
+                                <option value="JQ"  @if ($item->header_author == "JQ")
+                                        {{'selected'}}
+                                    @endif>Já qualificado</option>
+                            </select>  
+                            <span class="#"></span>
+                            @if ($errors->has('header_name_action'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('header_name_action') }}</strong>
+                                </span>
+                            @endif
+                        </div>           
+                     </div>     
             </div>
             <div class="row">                                             
              
             <div class="col-md-4">             
-                    <label for="header_culprit">Réu: </label>
-                    <div class="form-group has-feedback {{ $errors->has('header_culprit') ? 'has-error' : '' }}">
-                        <select tabindex="-98" name="header_culprit"  data-original-index="26"class="selectpicker">
-                            <option value="">Selecione</option>
-                            <option value="QC" @if ($item->header_culprit == "QC")
-                                {{'selected'}}
-                            @endif>Qualificação completa</option>
-                            <option value="JQ" @if ($item->header_culprit == "JQ")
-                                {{'selected'}}
-                            @endif>Já qualificado</option>
-                        </select> 
-                        <span class="#"></span>
-                        @if ($errors->has('header_culprit'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('header_culprit') }}</strong>
-                            </span>
-                        @endif 
-                    </div>           
-                </div>
-            <div class="col-md-4">             
-                    <label for="header_name_action">Autor: </label>
-                    <div class="form-group has-feedback {{ $errors->has('header_name_action') ? 'has-error' : '' }}">
-                        <select tabindex="-98"  name="header_author"data-original-index="26"class="selectpicker">
-                            <option value="">Selecione</option>
-                            <option value="QC" @if ($item->header_author == "QC")
-                                {{'selected'}}
-                            @endif>Qualificação completa</option>
-                            <option value="JQ"  @if ($item->header_author == "JQ")
-                                    {{'selected'}}
-                                @endif>Já qualificado</option>
-                        </select>  
-                        <span class="#"></span>
-                        @if ($errors->has('header_name_action'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('header_name_action') }}</strong>
-                            </span>
-                        @endif
-                    </div>           
-                    </div>               
+                <label for="header_culprit">Réu: </label>
+                <div class="form-group has-feedback {{ $errors->has('header_culprit') ? 'has-error' : '' }}">
+                    <select tabindex="-98" name="header_culprit"  data-original-index="26"class="selectpicker">
+                        <option value="">Selecione</option>
+                        <option value="QC" @if ($item->header_culprit == "QC")
+                            {{'selected'}}
+                        @endif>Qualificação completa</option>
+                        <option value="JQ" @if ($item->header_culprit == "JQ")
+                            {{'selected'}}
+                        @endif>Já qualificado</option>
+                    </select> 
+                    <span class="#"></span>
+                    @if ($errors->has('header_culprit'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('header_culprit') }}</strong>
+                        </span>
+                    @endif 
+                </div>           
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="row">
+                            <label for="section_ids">Seções</label>  
+                        <div class="col">
+                                
+                                @foreach ($item->sections as $item)
+                                <div class="form-check checkbox-inline">
+                                        <label class="form-check-label">
+                                        <input id="section_ids" name="section_ids[]"class="form-check-input" value="{{$item->id}}" type="checkbox">
+                                            <span class="form-check-sign"></span>
+                                            {{$item->title_section}}
+                                        </label>
+                                    </div>                            
+                                @endforeach 
+                        </div>                          
+                    </div>
+                </div>                    
+            </div>                     
         </div>
         <div class="card-footer text-center">
             <button type="submit" class="btn btn-primary">Salvar</button>
