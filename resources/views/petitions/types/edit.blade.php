@@ -143,8 +143,7 @@
                 <div class="form-group">
                     <div class="row">
                             <label for="section_ids">Seções</label>  
-                        <div class="col">
-                                
+                        <div class="col">                                
                                 @foreach ($item->sections as $item)
                                 <div class="form-check checkbox-inline">
                                         <label class="form-check-label">

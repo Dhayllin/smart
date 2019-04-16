@@ -17,10 +17,10 @@
            @csrf
         <div class="card-body ">       
             <div class="row">
-                <label for="title" class="col-sm-2 col-form-label">Título:</label>
+                <label for="title_section" class="col-sm-2 col-form-label">Título:</label>
                 <div class="col-sm-7">
                     <div class="form-group">
-                        <input class="form-control" name="title" type="text" value="{{$item->title}}">
+                        <input class="form-control" name="title_section" type="text" value="{{$item->title_section}}">
                     </div>
                 </div>           
             </div>   

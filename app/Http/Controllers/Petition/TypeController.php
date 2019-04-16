@@ -9,6 +9,7 @@ use App\Models\PetitionType;
 use App\Models\TypeSection;
 use Illuminate\Support\Collection;
 use App\Http\Requests\RequestPetitionTypes;
+use App\Models\PetitionSection;
 
 class TypeController extends Controller
 {
@@ -32,14 +33,19 @@ class TypeController extends Controller
     }
 
     public function list(){
-        $types = DB::table('petition_types')->select('petition_types.id')                                              
+        $types = DB::table('petition_types')->select('petition_types.id','petition_types.header_address','petition_types.header_num_process','petition_types.header_culprit','petition_types.header_name_action','petition_types.header_author')                                              
                                             ->where('petition_types.deleted_at',null)    
                                             ->get();   
         $listaTypes = new Collection();
 
-        foreach($types as $type){
+        foreach($types as  $type){
 
         $list_types = PetitionType::where('id',$type->id)->get()->first();
+        $list_types->header_address = PetitionType::headerAddress($type->header_address);
+        $list_types->header_num_process = PetitionType::headerNumProcess($type->header_num_process);
+        $list_types->header_culprit = PetitionType::headerCulprit($type->header_culprit);
+        $list_types->header_name_action = PetitionType::headerNameAction($type->header_name_action);
+        $list_types->header_author = PetitionType::headerAuthor($type->header_author);
         $list_types->sections;
         $listaTypes->push($list_types);        
         }
@@ -120,8 +126,10 @@ class TypeController extends Controller
         $item =  PetitionType::findOrFail($id);
 
         $item->sections;
+
+        $sections = PetitionSection::all();
         
-        return view('petitions.types.edit',compact('item'));       
+        return view('petitions.types.edit',compact('item','sections'));       
     }
 
     /**
@@ -146,7 +154,6 @@ class TypeController extends Controller
         }else{
             $item->active = 0;
         }
-
 
         return $item;
     }

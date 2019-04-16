@@ -48,7 +48,7 @@
                                 <i class="fa fa-edit">
                                 </i>
                             </a>
-                            <a rel="tooltip" type="button"  class="btn btn-danger " data-toggle="modal" v-on:click="alertDelete" href="#" data-original-title="Eliminar">
+                            <a rel="tooltip" type="button"  class="btn btn-danger " data-toggle="modal"data-target="#alertDelete" href="#" data-original-title="Eliminar">
                                 <i class="fa fa-remove">
                                 </i>                              
                             </a> 

@@ -26,7 +26,7 @@
             </thead>
                 <tbody>
                     <tr  v-for="item in sections">                       
-                        <td>@{{ item.title}}</td>
+                        <td>@{{ item.title_section}}</td>
                         <td>@{{ item.description}}</td>
                         <td>
                                 <input   :checked="item.active" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
