@@ -8,7 +8,7 @@
 <div class="card strpied-tabled-with-hover col-md-9">  
         <div class="card-header ">
             <h4 class="card-title">Editar Tipo Petição
-                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
+                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-success float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
             </h4>
         </div>
         <form action="{{ route('types.update',$item->id) }}" method="post" enctype="multipart/form-data">
@@ -27,16 +27,10 @@
                             </span>
                         @endif
                     </div>                   
-                </div>              
-                <div class="col">
-                    <label for="active">Ativo:</label>
-                    <div class="form-group has-feedback {{ $errors->has('razao_social') ? 'has-error' : '' }}">
-                    <input  checked="" name="active"data-toggle="swtch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
-                    </div>
-                </div>          
+                </div>   
             </div>  
             <div class="row"> 
-            <div class="col-md-3">             
+            <div class="col-md-4">             
             <label for="header_address">Endereçamento: </label>
             <div class="form-group has-feedback {{ $errors->has('header_address') ? 'has-error' : '' }}">
                 <select tabindex="-98" name="header_address" data-original-index="26"class="selectpicker">
@@ -56,7 +50,7 @@
                 @endif
             </div>           
             </div>
-            <div class="col-md-3">             
+            <div class="col-md-4">             
                     <label for="header_name_action">Nome Ação: </label>
                     <div class="form-group has-feedback {{ $errors->has('header_name_action') ? 'has-error' : '' }}">
                         <select tabindex="-98" name="header_name_action" data-original-index="26"class="selectpicker">
@@ -77,7 +71,7 @@
                     </div>           
                 </div> 
        
-                <div class="col-md-2">             
+                <div class="col-md-4">             
                     <label for="header_num_process">Núm Processo: </label>
                     <div class="form-group has-feedback {{ $errors->has('header_num_process') ? 'has-error' : '' }}">
                         <select tabindex="-98" name="header_num_process" data-original-index="26"class="selectpicker">
@@ -95,7 +89,9 @@
                             </span>
                         @endif 
                     </div>           
-                </div> 
+                </div>           
+            </div>
+            <div class="row"> 
                 <div class="col-md-4">             
                         <label for="header_name_action">Autor: </label>
                         <div class="form-group has-feedback {{ $errors->has('header_name_action') ? 'has-error' : '' }}">
@@ -115,9 +111,7 @@
                                 </span>
                             @endif
                         </div>           
-                     </div>     
-            </div>
-            <div class="row">                                             
+                        </div>                                            
              
             <div class="col-md-4">             
                 <label for="header_culprit">Réu: </label>
@@ -138,28 +132,36 @@
                         </span>
                     @endif 
                 </div>           
-            </div>
-            <div class="col">
-                <div class="form-group">
-                    <div class="row">
-                            <label for="section_ids">Seções</label>  
-                        <div class="col">                                
-                                @foreach ($item->sections as $item)
-                                <div class="form-check checkbox-inline">
-                                        <label class="form-check-label">
-                                        <input id="section_ids" name="section_ids[]"class="form-check-input" value="{{$item->id}}" type="checkbox">
-                                            <span class="form-check-sign"></span>
-                                            {{$item->title_section}}
-                                        </label>
-                                    </div>                            
-                                @endforeach 
-                        </div>                          
+            </div>    
+            <div class="row">
+                <div class="col">
+                    <label for="active">Ativo:</label>
+                    <div class="form-group has-feedback {{ $errors->has('razao_social') ? 'has-error' : '' }}">
+                    <input  checked="" name="active"data-toggle="swtch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                     </div>
-                </div>                    
+                </div> 
+            </div>
+                           
             </div>                     
+        </div>                       
+        <div class="row">
+                <div class="col">   
+                <label for="section_ids">Seções</label>  
+            <div class="col">                                
+                    @foreach ($item->sections as $item)
+                    <div class="form-check checkbox-inline">
+                            <label class="form-check-label">
+                            <input id="section_ids" name="section_ids[]"class="form-check-input" value="{{$item->id}}" type="checkbox">
+                                <span class="form-check-sign"></span>
+                                {{$item->title_section}}
+                            </label>
+                        </div>                            
+                    @endforeach 
+            </div>                          
         </div>
+    </div>
         <div class="card-footer text-center">
-            <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-success float-right">&nbsp;Salvar&nbsp;</button>
         </div>
     </div>
 </form>

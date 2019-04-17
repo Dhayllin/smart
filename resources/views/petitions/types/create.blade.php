@@ -8,7 +8,7 @@
 <div class="card strpied-tabled-with-hover col-md-10 ">  
         <div class="card-header ">
             <h4 class="card-title">Criar Tipo Petição
-                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
+                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-success float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
             </h4>
         </div>
         <form action="{{ route('types.store') }}" method="post">
@@ -32,7 +32,7 @@
             <div class="col-md-4">             
             <label for="header_address">Endereçamento: </label>
             <div class="form-group has-feedback {{ $errors->has('header_address') ? 'has-error' : '' }}">
-                <select tabindex="-98" name="header_address" data-original-index="26"class="selectpicker">
+                <select tabindex="-98" name="header_address" value="{{ old('header_address') }}"data-original-index="26"class="selectpicker">
                     <option value="">Selecione</option>
                     <option value="IV">Identificar a vara</option>
                     <option value="NV">Não Identificar a vara</option>
@@ -48,7 +48,7 @@
             <div class="col-md-4">             
                     <label for="header_culprit">Réu: </label>
                     <div class="form-group has-feedback {{ $errors->has('header_culprit') ? 'has-error' : '' }}">
-                        <select tabindex="-98" name="header_culprit"  data-original-index="26"class="selectpicker">
+                        <select tabindex="-98" name="header_culprit" value="{{ old('header_culprit') }}" data-original-index="26"class="selectpicker">
                             <option value="">Selecione</option>
                             <option value="QC">Qualificação completa</option>
                             <option value="JQ">Já qualificado</option>
@@ -64,7 +64,7 @@
                 <div class="col-md-4">             
                     <label for="header_num_process">Núm Processo: </label>
                     <div class="form-group has-feedback {{ $errors->has('header_num_process') ? 'has-error' : '' }}">
-                        <select tabindex="-98" name="header_num_process" data-original-index="26"class="selectpicker">
+                        <select tabindex="-98" name="header_num_process" value="{{ old('header_num_process') }}" data-original-index="26"class="selectpicker">
                             <option value="">Selecione</option>
                             <option value="S">Sim</option>
                             <option value="N">Não</option>
@@ -82,7 +82,7 @@
                 <div class="col-md-4">             
                 <label for="header_name_action">Nome Ação: </label>
                 <div class="form-group has-feedback {{ $errors->has('header_name_action') ? 'has-error' : '' }}">
-                    <select tabindex="-98" name="header_name_action" data-original-index="26"class="selectpicker">
+                    <select tabindex="-98" name="header_name_action"  value="{{ old('header_name_action') }}" data-original-index="26"class="selectpicker">
                         <option value="">Selecione</option>
                         <option value="LB">Linha de baixo</option>
                         <option value="ML">Mesma linha</option>
@@ -98,7 +98,7 @@
             <div class="col-md-4">             
                     <label for="header_name_action">Autor: </label>
                     <div class="form-group has-feedback {{ $errors->has('header_name_action') ? 'has-error' : '' }}">
-                        <select tabindex="-98"  name="header_author"data-original-index="26"class="selectpicker">
+                        <select tabindex="-98"  name="header_author"  value="{{ old('header_name_action') }}" data-original-index="26"class="selectpicker">
                             <option value="">Selecione</option>
                             <option value="QC">Qualificação completa</option>
                             <option value="JQ">Já qualificado</option>
@@ -110,30 +110,28 @@
                             </span>
                         @endif
                     </div>           
-                </div>  
-                <div class="col">
-                    <div class="form-group">
-                        <div class="row">
-                                <label for="section_ids">Seções</label>  
-                            <div class="col">
-                                 
-                                    @foreach ($itens as $item)
-                                    <div class="form-check checkbox-inline">
-                                            <label class="form-check-label">
-                                            <input id="section_ids" name="section_ids[]"class="form-check-input" value="{{$item->id}}" type="checkbox">
-                                                <span class="form-check-sign"></span>
-                                               {{$item->title_section}}
-                                            </label>
-                                        </div>                            
-                                    @endforeach 
-                            </div>                          
-                        </div>
-                    </div>                    
-                </div>  
+                </div> 
         </div>
-        <div class="card-footer text-center">
-            <button type="submit" class="btn btn-primary">Salvar</button>
-        </div>
+        
+        <div class="row">
+            <div class="col">
+                <label for="section_ids">Seções</label>  
+                <div class="col">                         
+                    @foreach ($itens as $item)
+                    <div class="form-check checkbox-inline">
+                        <label class="form-check-label">
+                        <input id="section_ids" name="section_ids[]"class="form-check-input" value="{{$item->id}}" type="checkbox">
+                            <span class="form-check-sign"></span>
+                            {{$item->title_section}}
+                        </label>
+                    </div>                            
+                    @endforeach 
+                </div>                          
+            </div>                               
+        </div>        
+    </div>
+    <div class="card-footer text-center">
+        <button type="submit" class="btn btn-success float-right">&nbsp;Salvar&nbsp;</button>
     </div>
 </form>
 </div>

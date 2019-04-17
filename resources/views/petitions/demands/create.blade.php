@@ -9,7 +9,7 @@
         
         <div class="card-header ">
             <h4 class="card-title">Criar Pedido
-                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
+                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-success float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
             </h4>
         </div>
         <form action="{{ route('demands.store') }}" method="post">
@@ -34,7 +34,7 @@
             </div>      
         </div>
         <div class="card-footer text-center">
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="submit" class="btn btn-success float-right">&nbsp;Salvar&nbsp;</button>
         </div>
         </div>
     </div>

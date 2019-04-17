@@ -9,7 +9,7 @@
         
         <div class="card-header ">
             <h4 class="card-title">Editar Seção
-                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
+                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-success float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
             </h4>
         </div>
         <form action="{{ route('sections.update',$item->id) }}" method="post" enctype="multipart/form-data">
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="card-footer text-center">
-            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="submit" class="btn btn-success float-right">&nbsp;Salvar&nbsp;</button>
         </div>
         </div>
     </div>

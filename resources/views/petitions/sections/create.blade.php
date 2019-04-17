@@ -8,7 +8,7 @@
 <div class="card strpied-tabled-with-hover col-md-10 ">  
         <div class="card-header ">
             <h4 class="card-title">Criar Seção
-                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
+                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-success float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
             </h4>
         </div>        
                 @if(count($errors) > 0)
@@ -53,7 +53,7 @@
                 </div>            
             </div>
             <div class="card-footer text-center">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="submit" class="btn btn-success float-right">&nbsp;Salvar&nbsp;</button>
             </div>
         </div>
         
