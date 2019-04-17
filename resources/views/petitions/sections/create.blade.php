@@ -28,7 +28,7 @@
                 <label for="title_section" class="col-sm-2 col-form-label">Título:</label>
                 <div class="col-sm-7">
                     <div class="form-group has-feedback {{ $errors->has('title_section') ? 'has-error' : '' }}">
-                        <input class="form-control" name="title_section" type="text">
+                        <input class="form-control" name="title_section" type="text" value="{{ old('title_section') }}">
                         <span class="#"></span>
                         @if ($errors->has('title_section'))
                             <span class="help-block">
@@ -42,7 +42,7 @@
                 <label for="description" class="col-sm-2 col-form-label">Descrição:</label>
                 <div class="col-sm-7">
                     <div class="form-group has-feedback {{ $errors->has('description') ? 'has-error' : '' }}">
-                        <input class="form-control" name="description"  type="text">
+                        <input class="form-control" name="description"  type="text" value="{{ old('description') }}">
                         <span class="#"></span>
                         @if ($errors->has('description'))
                             <span class="help-block">

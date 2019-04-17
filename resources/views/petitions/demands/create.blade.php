@@ -20,16 +20,15 @@
                 <label for="title" class="col-sm-2 col-form-label">Título:</label>
                 <div class="col-sm-7">
                     <div class="form-group">
-                        <input class="form-control" name="title" type="text">
+                        <input class="form-control" name="title" type="text"  value="{{ old('title') }}">
                     </div>
                 </div>           
-            </div>          
-            
+            </div> 
             <div class="row">
                 <label for="content" class="col-sm-2 col-form-label">Descrição:</label>
                 <div class="col-sm-7">
                     <div class="form-group">
-                        <textarea class="form-control" name="content" rows="30" cols="1000" type="text"> </textarea>
+                        <textarea class="form-control" name="content" rows="30" cols="1000" type="text"  value="{{ old('content') }}"> </textarea>
                     </div>
                 </div>            
             </div>      

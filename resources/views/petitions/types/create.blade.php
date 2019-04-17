@@ -18,7 +18,7 @@
                 <div class="col">
                 <label for="title">Título:</label>               
                     <div class="form-group has-feedback {{ $errors->has('title') ? 'has-error' : '' }}">
-                        <input class="form-control" name="title" type="text">
+                        <input class="form-control" name="title" type="text" value="{{ old('title') }}">
                          <span class="#"></span>
                         @if ($errors->has('title'))
                             <span class="help-block">
