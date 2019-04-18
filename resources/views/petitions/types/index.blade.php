@@ -18,11 +18,11 @@
                 <tr>
                     <th>Título</th>
                     <th>Endereçamento</th>
-                    <th>Seções</th>
+                    <th>Nome Ação</th>                   
                     <th>Núm Processo</th>
                     <th>Autor</th>
                     <th>Réu</th>
-                    <th>Nome Ação</th>
+                    <th>Seções</th>
                     <th>Ativo</th>
                     <th>Ações</th>
                 </tr>
@@ -36,12 +36,12 @@
                         <td>@{{ item.header_culprit}}</td>
                         <td>@{{ item.header_name_action}}</td>  
                         <td> 
-                            <span v-for="data_section in item.sections">
-                                - @{{ data_section.title_section }} 
+                            <span class="badge badge-success" v-for="data_section in item.sections">
+                                &nbsp;  @{{ data_section.title_section }} 
                             </span>
                         </td>
                         <td>
-                            <input   :checked="item.active"  data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
+                            <input :checked="item.active" v-on:change="btnActive(item)"  data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
                         <td>                           
                             <a rel="tooltip"  type="button" class="btn btn-primary" :href="'types/'+item.id+'/edit'" data-original-title="Editar">
@@ -56,16 +56,16 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content col-md-8">
                                         <div class="modal-header ">
-                                                <h4>Deletar <strong>@{{item.id}} </strong>?</h4> 
-                                                <button type="button" class="close" data-dismiss="modal">
-                                                        <span>&times;</span>
-                                                </button>                                                    
+                                            <h4>Deletar <strong>@{{item.id}} </strong>?</h4> 
+                                            <button type="button" class="close" data-dismiss="modal">
+                                                    <span>&times;</span>
+                                            </button>                                                    
                                         </div>                                         
                                         <div class="modal-footer">
-                                            <a rel="tooltip" type="button"  v-on:click.prevent.stop="deleteTypes(item)" class="btn btn-danger" href="#">
+                                            <a rel="tooltip" type="button"  v-on:click.prevent.stop="deleteTypes(item)" class="btn btn-danger float-right" href="#">
                                                 Confirmar ?
                                             </a> 
-                                        </div> 
+                                        </div>  
                                     </div>
                                 </div>
                             </div>                       

@@ -27,6 +27,9 @@ Route::group(['middleware' => 'web'], function () {
   Route::get('test','Petition\SectionController@testDelete')->name('test');
   Route::get('list-demands','Petition\DemandController@list')->name('list-demands');
   Route::get('list-types','Petition\TypeController@list')->name('list-types'); 
+  Route::get('btn-active-type/{id}','Petition\TypeController@btnActive')->name('btn-active-type'); 
+  Route::get('btn-active-section/{id}','Petition\SectionController@btnActive')->name('btn-active-section'); 
+  Route::get('btn-active-demand/{id}','Petition\DemandController@btnActive')->name('btn-active-demand'); 
     
 
 });

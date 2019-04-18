@@ -137,7 +137,7 @@
                 <div class="col">
                     <label for="active">Ativo:</label>
                     <div class="form-group has-feedback {{ $errors->has('razao_social') ? 'has-error' : '' }}">
-                    <input  checked="" name="active"data-toggle="swtch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
+                    <input  checked="{{$item->active}}" name="active"data-toggle="swtch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                     </div>
                 </div> 
             </div>

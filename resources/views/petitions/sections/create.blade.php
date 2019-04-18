@@ -10,16 +10,7 @@
             <h4 class="card-title">Criar Seção
                     <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-success float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
             </h4>
-        </div>        
-                @if(count($errors) > 0)
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error}} </li>
-                        @endforeach 
-                    </ul>
-                </div>                       
-               @endif   
+        </div>       
         <form action="{{ route('sections.store') }}" method="post">
            
         <div class="card-body ">

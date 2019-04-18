@@ -19,16 +19,28 @@
             <div class="row">
                 <label for="title" class="col-sm-2 col-form-label">Título:</label>
                 <div class="col-sm-7">
-                    <div class="form-group">
+                    <div class="form-group has-feedback {{ $errors->has('title') ? 'has-error' : '' }}">
                         <input class="form-control" name="title" type="text"  value="{{ old('title') }}">
+                        <span class="#"></span>
+                        @if ($errors->has('title'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('title') }}</strong>
+                            </span>
+                        @endif
                     </div>
                 </div>           
             </div> 
             <div class="row">
                 <label for="content" class="col-sm-2 col-form-label">Descrição:</label>
                 <div class="col-sm-7">
-                    <div class="form-group">
+                    <div class="form-group has-feedback {{ $errors->has('content') ? 'has-error' : '' }}">
                         <textarea class="form-control" name="content" rows="30" cols="1000" type="text"  value="{{ old('content') }}"> </textarea>
+                        <span class="#"></span>
+                        @if ($errors->has('content'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('content') }}</strong>
+                            </span>
+                        @endif
                     </div>
                 </div>            
             </div>      

@@ -27,7 +27,7 @@
                         <td>@{{ item.title}}</td>
                         <td>@{{ item.content}}</td>
                         <td>
-                            <input   :checked="item.active" data-toggle="switch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
+                            <input   :checked="item.active" v-on:change="btnActive(item)"  data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
                         </td>
                         <td>                           
                             <a rel="tooltip" class="btn btn-primary" :href="'demands/'+item.id+'/edit'" data-original-title="Edit">

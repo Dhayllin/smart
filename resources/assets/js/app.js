@@ -1,15 +1,3 @@
-var app = new Vue({
-    el:"#appvue",
-    data:{
-        title: "Vue js do jeito  ninja! 04", 
-        linguagens:[
-            {nome: "Javascript"},
-            {nome: "PHP"} ,             
-            {nome: "Java"},     
-            {nome: "Python"},
-        ]             
-    }
-})
 
 var app = new Vue({
     el:"#list_sections",    
@@ -40,6 +28,19 @@ var app = new Vue({
                     });
                 }); 
         },
+        btnActive: function(item){            
+            var url = "btn-active-section/" + item.id; 
+                axios.get(url).then(response => {
+
+                    this.getSections();     
+                    $('.modal').modal('hide');
+                    $.notify({
+                        message: 'Estado alterado!'
+                    },{
+                        type: 'success'
+                    });
+                }); 
+        }, 
     }
 })
 
@@ -72,6 +73,19 @@ var app = new Vue({
                     });
                 }); 
         },
+        btnActive: function(item){            
+            var url = "btn-active-demand/" + item.id; 
+                axios.get(url).then(response => {
+
+                    this.getDemands();      
+                    $('.modal').modal('hide');
+                    $.notify({
+                        message: 'Estado alterado!'
+                    },{
+                        type: 'success'
+                    });
+                }); 
+        }, 
     }
 })
 
@@ -107,6 +121,19 @@ var app = new Vue({
                         type: 'danger'
                     });
                 }); 
-        },    
+        },  
+        btnActive: function(item){            
+            var url = "btn-active-type/" + item.id; 
+                axios.get(url).then(response => {
+
+                    this.getTypes();
+                    $('.modal').modal('hide');
+                    $.notify({
+                        message: 'Estado alterado!'
+                    },{
+                        type: 'success'
+                    });
+                }); 
+        },   
     }
 })

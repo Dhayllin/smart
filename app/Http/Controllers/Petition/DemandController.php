@@ -6,6 +6,7 @@ use DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\PetitionDemand;
+use App\Http\Requests\RequestPetitionDemands;
 
 class DemandController extends Controller
 {
@@ -52,17 +53,8 @@ class DemandController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'title'=>'required',
-            'content'=>'required',        
-            ],
-            [
-                'title.required'=>'Adicione um Título.'   ,
-                'content.required'=>'Adicione uma Descrição.'   
-            ]
-        );
+    public function store(RequestPetitionDemands $request)
+    {        
         $item = new PetitionDemand();
 
         $item->title = $request->title;
@@ -115,7 +107,7 @@ class DemandController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RequestPetitionDemands $request, $id)
     {
         $item = PetitionDemand::findOrFail($id);
 
@@ -152,5 +144,20 @@ class DemandController extends Controller
     {
         $demand = PetitionDemand::findOrFail($id);
         $demand->delete();    
+    }
+
+    public function btnActive($id){
+
+        $item =  PetitionDemand::findOrFail($id);
+
+        if($item->active == 0 ){
+            $item->active = 1;
+            $item->save();
+        }else{
+            $item->active = 0;
+            $item->save();
+        }
+        
+        return $item;
     }
 }

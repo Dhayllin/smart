@@ -139,9 +139,9 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(RequestPetitionTypes $request)
+    public function update(RequestPetitionTypes $request,$id)
     {
-        $item = new PetitionType();
+        $item = PetitionType::findOrFail($id);
         $item->title = $request->title;
         $item->header_address =$request->header_address; 
         $item->header_culprit =$request->header_culprit; 
@@ -168,6 +168,21 @@ class TypeController extends Controller
     {
         $type = PetitionType::findOrFail($id);
         $type->delete(); 
+    }
+
+    public function btnActive($id){
+
+        $item =  PetitionType::findOrFail($id);
+
+        if($item->active == 0 ){
+            $item->active = 1;
+            $item->save();
+        }else{
+            $item->active = 0;
+            $item->save();
+        }
+        
+        return $item;
     }
 }
 

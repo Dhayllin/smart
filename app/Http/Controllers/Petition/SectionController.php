@@ -53,20 +53,10 @@ class SectionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $this->validate($request, [
-            'title'=>'required',
-            'description'=>'required',        
-            ],
-            [
-                'title.required'=>'Adicione um Título.'   ,
-                'description.required'=>'Adicione uma Descrição.'   
-            ]
-        );
-        
+    {        
         $item = new PetitionSection();
 
-        $item->title = $request->title;
+        $item->title_section = $request->title_section;
         $item->description = $request->description;
         $item->active = 1;
         
@@ -121,7 +111,7 @@ class SectionController extends Controller
 
         $item = PetitionSection::findOrFail($id);
 
-        $item->title = $request->title;
+        $item->title_section = $request->title_section;
         $item->description = $request->description;
 
         if($request->active != null){
@@ -162,5 +152,20 @@ class SectionController extends Controller
                                                             ->where('deleted_at',null)    
                                                             ->get();  
         return  view('petitions.sections.test',compact('sections'));
+    }
+
+    public function btnActive($id){
+
+        $item =  PetitionSection::findOrFail($id);
+
+        if($item->active == 0 ){
+            $item->active = 1;
+            $item->save();
+        }else{
+            $item->active = 0;
+            $item->save();
+        }
+        
+        return $item;
     }
 }
