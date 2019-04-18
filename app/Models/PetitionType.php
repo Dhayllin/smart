@@ -88,4 +88,11 @@ class PetitionType extends Model
     public function sections(){
         return $this->belongsToMany(PetitionSection::class,'type_sections');
     }
+
+    public function sectionsArray(){
+        foreach ($this->sections as $m){
+            $sections[] = $m->id;
+        }
+        return $sections;
+    }
 }

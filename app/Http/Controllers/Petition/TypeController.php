@@ -155,7 +155,26 @@ class TypeController extends Controller
             $item->active = 0;
         }
 
-        return $item;
+        DB::beginTransaction();
+        try
+        {   
+            $item->update();
+
+          foreach($request->section_ids as $id){
+
+                $section_types = new TypeSection();
+                $section_types->petition_type_id = $item->id;
+                $section_types->petition_section_id = $id;
+                $section_types->update();             
+            }
+            DB::commit(); 
+            return redirect(route('types.index'))->with('mensagem_sucesso', 'Tipo adicionada com sucesso');
+        }
+        catch(\Exception $ex)                   
+        {
+            DB::rollBack();
+            return redirect(route('types.create', $item->id))->withErrors($ex->getMessage())->withInput();
+        }  
     }
 
     /**

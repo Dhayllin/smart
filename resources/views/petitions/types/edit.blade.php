@@ -8,7 +8,7 @@
 <div class="card strpied-tabled-with-hover col-md-9">  
         <div class="card-header ">
             <h4 class="card-title">Editar Tipo Petição
-                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-success float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
+                <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right">Fechar</button>  
             </h4>
         </div>
         <form action="{{ route('types.update',$item->id) }}" method="post" enctype="multipart/form-data">
@@ -145,21 +145,21 @@
             </div>                     
         </div>                       
         <div class="row">
-                <div class="col">   
+            <div class="col">
                 <label for="section_ids">Seções</label>  
-            <div class="col">                                
-                    @foreach ($item->sections as $item)
+                <div class="col">                         
+                    @foreach ($sections as $section)
                     <div class="form-check checkbox-inline">
-                            <label class="form-check-label">
-                            <input id="section_ids" name="section_ids[]"class="form-check-input" value="{{$item->id}}" type="checkbox">
-                                <span class="form-check-sign"></span>
-                                {{$item->title_section}}
-                            </label>
-                        </div>                            
+                        <label class="form-check-label">
+                     
+                            <span class="form-check-sign"></span>
+                            {{$section->title_section}}
+                        </label>
+                    </div>                            
                     @endforeach 
-            </div>                          
-        </div>
-    </div>
+                </div>                          
+            </div>                               
+        </div>  
         <div class="card-footer text-center">
                 <button type="submit" class="btn btn-success float-right">&nbsp;Salvar&nbsp;</button>
         </div>

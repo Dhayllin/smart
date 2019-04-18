@@ -20,7 +20,7 @@
                 <label for="title_section" class="col-sm-2 col-form-label">Título:</label>
                 <div class="col-sm-7">
                     <div class="form-group">
-                        <input class="form-control" name="title_section" type="text" value="{{$item->title_section}}">
+                        <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right">Fechar</button> 
                     </div>
                 </div>           
             </div>   
