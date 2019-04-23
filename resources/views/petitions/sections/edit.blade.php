@@ -9,7 +9,7 @@
         
         <div class="card-header ">
             <h4 class="card-title">Editar Seção
-                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-success float-right"><i class="fa fa-arrow-left"></i> Voltar</button> 
+                    <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right"> Fechar</button> 
             </h4>
         </div>
         <form action="{{ route('sections.update',$item->id) }}" method="post" enctype="multipart/form-data">
@@ -19,16 +19,28 @@
             <div class="row">
                 <label for="title_section" class="col-sm-2 col-form-label">Título:</label>
                 <div class="col-sm-7">
-                    <div class="form-group">
-                        <button type="button" onclick="window.history.go(-1); return false;"  class="btn btn-primary float-right">Fechar</button> 
+                    <div class="form-group has-feedback {{ $errors->has('title_section') ? 'has-error' : '' }}">
+                        <input class="form-control" name="title_section" type="text" value="{{ $item->title_section}}">
+                        <span class="#"></span>
+                        @if ($errors->has('title_section'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('title_section') }}</strong>
+                            </span>
+                        @endif
                     </div>
                 </div>           
-            </div>   
+            </div>  
             <div class="row">
                 <label for="description" class="col-sm-2 col-form-label">Descrição:</label>
                 <div class="col-sm-7">
-                    <div class="form-group">
-                        <input class="form-control" name="description"  type="text" value="{{$item->description}}">
+                    <div class="form-group has-feedback {{ $errors->has('description') ? 'has-error' : '' }}">
+                        <input class="form-control" name="description"  type="text" value="{{ $item->description }}">
+                        <span class="#"></span>
+                        @if ($errors->has('description'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('description') }}</strong>
+                            </span>
+                        @endif
                     </div>
                 </div>            
             </div>

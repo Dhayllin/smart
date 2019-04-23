@@ -111,8 +111,7 @@
                         @endif
                     </div>           
                 </div> 
-        </div>
-        
+        </div>        
         <div class="row">
             <div class="col">
                 <label for="section_ids">Seções</label>  
