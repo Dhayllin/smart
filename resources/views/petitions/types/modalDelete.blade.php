@@ -13,7 +13,7 @@
                     </div>
                     <div class="col">
                         <button type="button" class="btn btn-success"  data-dismiss="modal">
-                                Cancelar
+                                Cancelarr
                         </button>  
                     </div>
                 </div>  
