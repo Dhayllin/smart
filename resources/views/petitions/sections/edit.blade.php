@@ -20,11 +20,11 @@
                 <label for="title_section" class="col-sm-2 col-form-label">Título:</label>
                 <div class="col-sm-7">
                     <div class="form-group has-feedback {{ $errors->has('title_section') ? 'has-error' : '' }}">
-                        <input class="form-control" name="title_section" type="text" value="{{ $item->title_section}}">
+                        <input class="form-control" name="title_section" type="text" value="{{ $item->title_section') }}">
                         <span class="#"></span>
                         @if ($errors->has('title_section'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('title_section') }}</strong>
+                                <strong>{{ $errors->first('title_section') }}</strong> 
                             </span>
                         @endif
                     </div>

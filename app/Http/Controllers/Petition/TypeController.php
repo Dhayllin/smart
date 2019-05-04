@@ -125,8 +125,6 @@ class TypeController extends Controller
     {
         $item =  PetitionType::findOrFail($id);
 
-        $item->sections;
-
         $sections = PetitionSection::all();
         
         return view('petitions.types.edit',compact('item','sections'));       
@@ -183,10 +181,12 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         $type = PetitionType::findOrFail($id);
         $type->delete(); 
+        return;
     }
 
     public function btnActive($id){

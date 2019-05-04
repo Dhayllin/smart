@@ -135,27 +135,26 @@
             </div>    
             <div class="row">
                 <div class="col">
-                    <label for="active">Ativo:</label>
+                    <label  class="form-check-label" for="active">Ativo:</label>
                     <div class="form-group has-feedback {{ $errors->has('razao_social') ? 'has-error' : '' }}">
-                    <input  checked="{{$item->active}}" name="active"data-toggle="swtch" data-on-color="primary" data-off-color="primary" data-on-text="" data-off-text="" type="checkbox">
+                    <input name="active"   data-on-text="" type="checkbox" {{ $item->active ? "checked" : '' }}>
                     </div>
                 </div> 
-            </div>
-                           
+            </div>                           
             </div>                     
         </div>                       
         <div class="row">
             <div class="col">
                 <label for="section_ids">Seções</label>  
                 <div class="col">                         
-                    @foreach ($sections as $section)
-                    <div class="form-check checkbox-inline">
-                        <label class="form-check-label">
-                     
-                            <span class="form-check-sign"></span>
-                            {{$section->title_section}}
-                        </label>
-                    </div>                            
+                    @foreach ($sections as $section)       
+                        <div class="form-check checkbox-inline">
+                            <label class="form-check-label">                         
+                            <input  name="section_ids[]" data-on-text="" type="checkbox">  
+                                <span class="form-check-sign"></span>
+                                {{$section->title_section}}
+                            </label>    
+                        </div>        
                     @endforeach 
                 </div>                          
             </div>                               

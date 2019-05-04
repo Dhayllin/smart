@@ -13626,7 +13626,8 @@ var app = new Vue({
     }, 
     data:{
         types: [],
-        showModal: true
+        showModal: true,
+        fillType: {id:'',title:''},
     },
     methods: {
         getTypes: function(){
@@ -13636,12 +13637,13 @@ var app = new Vue({
             })
         },
 
-        getModalId: function(item){          
-            this.selectedUser = item;
-            Event.$emit('alertDelete', item);
+        getDestroy: function(item){          
+            this.fillType.id = item.id;
+            this.fillType.title = item.title;
+            $('#alertDelete').modal('show');
         },
-        deleteTypes: function(item){            
-            var url = "types/" + item.id; 
+        deleteTypes: function(id){            
+            var url = "types/" + id; 
                 axios.delete(url).then(response => {
                     this.getTypes();
                     $('.modal').modal('hide');

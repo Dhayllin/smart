@@ -11,10 +11,10 @@
         <div class="main-panel">
                 @include('layouts.partials.contentheader')
            <!-- Main content -->
-            <section class="content">
+            <div class="container">
                 <!-- Your Page Content Here -->               
                 @yield('content') 
-            </section><!-- /.content -->
+            </div><!-- /.content -->
         </div><!-- /.content-wrapper -->        
     @include('layouts.partials.footer')                         
 </body>
